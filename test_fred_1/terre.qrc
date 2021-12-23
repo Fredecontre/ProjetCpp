@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="terre_im">
+    <file>terre.png</file>
+  </qresource>
+</RCC>
