@@ -11,7 +11,8 @@ HEADERS += \
     first_page.h \
     second_page.h \
     fenetre1.h \
-    fenetre2.h
+    fenetre2.h \
+    terre.h
 
 FORMS += \
     fenetre1.ui \
