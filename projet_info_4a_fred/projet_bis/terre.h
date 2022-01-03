@@ -8,7 +8,7 @@ using namespace std;
 class Terre{
 
     public:
-    Terre();
+    Terre():santeTerre(100){}
 
     size_t getSante();
     size_t calculSante(int santeMarin, int santeTerrestre);
@@ -19,9 +19,9 @@ class Terre{
     private:
 
     size_t temps;
-    size_t santeTerre=100;
-    list <Ecostysteme>;
-    list <EtreVivant>;
+    size_t santeTerre;
+    list <Ecostysteme> ecostystemes;
+    list <EtreVivant> etresVivants;
 
 
 

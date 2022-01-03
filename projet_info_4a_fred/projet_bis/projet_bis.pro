@@ -1,18 +1,18 @@
 QT += widgets
 SOURCES += \
     main.cpp \
-    first_page.cpp \
-    second_page.cpp \
     fenetre1.cpp \
     fenetre2.cpp \
-    terre.cpp
+    terre.cpp \
+    ecosysteme.cpp \
+    etrevivant.cpp
 
 HEADERS += \
-    first_page.h \
-    second_page.h \
     fenetre1.h \
     fenetre2.h \
-    terre.h
+    terre.h \
+    ecosysteme.h \
+    etrevivant.h
 
 FORMS += \
     fenetre1.ui \
