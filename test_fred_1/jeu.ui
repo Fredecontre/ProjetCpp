@@ -22,10 +22,10 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="saisie_nom">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>130</x>
      <y>200</y>
      <width>151</width>
      <height>25</height>
@@ -47,11 +47,11 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="intro">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>50</y>
+     <x>80</x>
+     <y>60</y>
      <width>261</width>
      <height>91</height>
     </rect>
@@ -59,11 +59,23 @@
    <property name="text">
     <string>Bienvenue à Hands on Earth, le jeu</string>
    </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
    <property name="wordWrap">
     <bool>false</bool>
    </property>
+   <property name="openExternalLinks">
+    <bool>false</bool>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+   </property>
+   <property name="buddy">
+    <cstring></cstring>
+   </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="terre_im">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -88,12 +100,43 @@
     <bool>false</bool>
    </property>
   </widget>
-  <zorder>label_2</zorder>
-  <zorder>lineEdit</zorder>
-  <zorder>label</zorder>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>270</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </widget>
+  <zorder>terre_im</zorder>
+  <zorder>saisie_nom</zorder>
+  <zorder>intro</zorder>
+  <zorder>pushButton</zorder>
  </widget>
  <resources>
   <include location="terre.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MonJeu</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>219</x>
+     <y>266</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>398</x>
+     <y>189</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
