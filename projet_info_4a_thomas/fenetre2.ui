@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>fenetre2</class>
+ <widget class="QMainWindow" name="fenetre2">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>863</width>
+    <height>603</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>70</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>0</y>
+      <width>181</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="bouton_fenetre2">
+       <property name="text">
+        <string>retour menu</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="bouton_action">
+       <property name="text">
+        <string>passer temps</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>863</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>bouton_fenetre2</sender>
+   <signal>clicked()</signal>
+   <receiver>fenetre2</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>665</x>
+     <y>211</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>407</x>
+     <y>275</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
