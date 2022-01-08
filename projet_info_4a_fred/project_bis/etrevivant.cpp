@@ -10,27 +10,28 @@ size_t Conifere::nbConiferes = 25;
 size_t Algue::nbAlgues = 25;
 
 
+
 void Humain::impactEcologique(){
 
    pollution = niveauTechnologique*2;  //La technologie pollue beacoup -> d'où le *2
 
-   impactEcolo =  nbHumains * (pollution + consommationEau);
+   impactEcolo = pollution + nbHumains + consommationEau;
 }
 
 void Vache::impactEcologique(){
 
    pollution = empreinteMethane;
 
-   impactEcolo = nbVaches* (pollution  + consommationEau);
+   impactEcolo = pollution + nbVaches + consommationEau;
 }
 
 void Conifere::impactEcologique(){
 
-   impactEcolo = O2*nbConiferes;
+   impactEcolo = O2 + nbConiferes;
 }
 
 void Algue::impactEcologique(){
 
 
-   impactEcolo = O2*nbAlgues;
+   impactEcolo = O2 + nbAlgues;
 }

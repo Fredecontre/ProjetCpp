@@ -75,7 +75,7 @@ public:
     QSpacerItem *verticalSpacer_9;
     QLabel *P3_Vache;
     QSpacerItem *verticalSpacer_8;
-    QLabel *P3_Vache_CO2;
+    QLabel *P3_Vache_Methane;
     QSpacerItem *verticalSpacer_15;
     QSpacerItem *horizontalSpacer;
 
@@ -83,7 +83,7 @@ public:
     {
         if (fenetre2->objectName().isEmpty())
             fenetre2->setObjectName(QStringLiteral("fenetre2"));
-        fenetre2->resize(890, 544);
+        fenetre2->resize(958, 481);
         centralwidget = new QWidget(fenetre2);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Ignored);
@@ -377,14 +377,14 @@ public:
 
         verticalLayout->addItem(verticalSpacer_8);
 
-        P3_Vache_CO2 = new QLabel(centralwidget);
-        P3_Vache_CO2->setObjectName(QStringLiteral("P3_Vache_CO2"));
-        sizePolicy5.setHeightForWidth(P3_Vache_CO2->sizePolicy().hasHeightForWidth());
-        P3_Vache_CO2->setSizePolicy(sizePolicy5);
-        P3_Vache_CO2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        P3_Vache_CO2->setIndent(20);
+        P3_Vache_Methane = new QLabel(centralwidget);
+        P3_Vache_Methane->setObjectName(QStringLiteral("P3_Vache_Methane"));
+        sizePolicy5.setHeightForWidth(P3_Vache_Methane->sizePolicy().hasHeightForWidth());
+        P3_Vache_Methane->setSizePolicy(sizePolicy5);
+        P3_Vache_Methane->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        P3_Vache_Methane->setIndent(20);
 
-        verticalLayout->addWidget(P3_Vache_CO2);
+        verticalLayout->addWidget(P3_Vache_Methane);
 
         verticalSpacer_15 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -429,7 +429,7 @@ public:
         P3_Humain->setText(QApplication::translate("fenetre2", "Humains : NB", Q_NULLPTR));
         P3_Humain_CO2->setText(QApplication::translate("fenetre2", "CO2 : X %", Q_NULLPTR));
         P3_Vache->setText(QApplication::translate("fenetre2", "Vaches : NB", Q_NULLPTR));
-        P3_Vache_CO2->setText(QApplication::translate("fenetre2", "CO2 : X %", Q_NULLPTR));
+        P3_Vache_Methane->setText(QApplication::translate("fenetre2", "Methane :", Q_NULLPTR));
     } // retranslateUi
 
 };

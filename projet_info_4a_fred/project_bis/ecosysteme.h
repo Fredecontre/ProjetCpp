@@ -3,12 +3,13 @@
 #include <iostream>
 
 using namespace std;
+
 class Ecosysteme
 {
 protected:
     size_t santeEcosysteme;
 public:
-    Ecosysteme();
+    Ecosysteme():santeEcosysteme(100){}
 };
 
 

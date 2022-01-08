@@ -678,7 +678,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="P3_Vache_CO2">
+       <widget class="QLabel" name="P3_Vache_Methane">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -686,7 +686,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>CO2 : X %</string>
+         <string>Methane :</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

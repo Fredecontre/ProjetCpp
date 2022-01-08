@@ -7,20 +7,25 @@ using namespace std;
 class EtreVivant
 {
 protected:
-        size_t age;
-        size_t id;
-        size_t longevite;
-        int impactEcolo;
-        static size_t nbEtresVivants;
+    size_t age;
+    size_t id;
+    size_t longevite;
+    int impactEcolo;
+    static size_t nbEtresVivants;
+
 
 public:
-        EtreVivant():age(0),id(nbEtresVivants++){}
+    EtreVivant():age(0),id(nbEtresVivants++){}
 
-            virtual void impactEcologique()=0;
+    virtual void impactEcologique()=0;
 
-            static size_t getNbEtresVivants(){return nbEtresVivants;}
+    static size_t getNbEtresVivants(){return nbEtresVivants;}
+
+
 
 };
+
+
 
 
 

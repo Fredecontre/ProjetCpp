@@ -3,7 +3,10 @@
 
 #pragma once
 //using namespace std;
-#include <iostream> // fred ne l'a pas mit
+#include <list>
+#include "ecosysteme.h"
+#include "etrevivant.h"
+#include <iostream>
 
 class Terre{
 
@@ -20,8 +23,8 @@ class Terre{
 
     //int temps;
     int santeTerre;
-    //list <Ecostysteme>; // ATTENTION COMPLETER AVEC LE NOM
-    //list <EtreVivant>;
+    list<Ecosysteme*> Ecosystemes;
+    list<EtreVivant*> EtresVivants;
 
 
 

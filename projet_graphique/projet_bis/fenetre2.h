@@ -5,6 +5,7 @@
 #include <QDesktopWidget>
 #include "terre.h"
 #include "etrevivant.h"
+
 namespace Ui {
 class fenetre2;
 }
@@ -28,6 +29,7 @@ private:
     Ui::fenetre2 *ui;
     QDesktopWidget dw;
     Terre *terre;
+    vector<EtreVivant*> Etres;
 };
 
 #endif // FENETRE2_H

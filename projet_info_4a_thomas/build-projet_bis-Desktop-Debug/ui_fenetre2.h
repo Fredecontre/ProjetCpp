@@ -65,7 +65,7 @@ public:
     QSpacerItem *verticalSpacer_9;
     QLabel *P3_Vache;
     QSpacerItem *verticalSpacer_8;
-    QLabel *P3_Vache_CO2;
+    QLabel *P3_Vache_Methane;
     QSpacerItem *horizontalSpacer;
 
     void setupUi(QMainWindow *fenetre2)
@@ -275,13 +275,13 @@ public:
 
         verticalLayout->addItem(verticalSpacer_8);
 
-        P3_Vache_CO2 = new QLabel(centralwidget);
-        P3_Vache_CO2->setObjectName(QStringLiteral("P3_Vache_CO2"));
-        sizePolicy.setHeightForWidth(P3_Vache_CO2->sizePolicy().hasHeightForWidth());
-        P3_Vache_CO2->setSizePolicy(sizePolicy);
-        P3_Vache_CO2->setAlignment(Qt::AlignCenter);
+        P3_Vache_Methane = new QLabel(centralwidget);
+        P3_Vache_Methane->setObjectName(QStringLiteral("P3_Vache_Methane"));
+        sizePolicy.setHeightForWidth(P3_Vache_Methane->sizePolicy().hasHeightForWidth());
+        P3_Vache_Methane->setSizePolicy(sizePolicy);
+        P3_Vache_Methane->setAlignment(Qt::AlignCenter);
 
-        verticalLayout->addWidget(P3_Vache_CO2);
+        verticalLayout->addWidget(P3_Vache_Methane);
 
         horizontalSpacer = new QSpacerItem(150, 0, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
@@ -319,7 +319,7 @@ public:
         P3_Humain->setText(QApplication::translate("fenetre2", "Humains : NB", Q_NULLPTR));
         P3_Humain_CO2->setText(QApplication::translate("fenetre2", "CO2 : X %", Q_NULLPTR));
         P3_Vache->setText(QApplication::translate("fenetre2", "Vaches : NB", Q_NULLPTR));
-        P3_Vache_CO2->setText(QApplication::translate("fenetre2", "CO2 : X %", Q_NULLPTR));
+        P3_Vache_Methane->setText(QApplication::translate("fenetre2", "Methane: X %", Q_NULLPTR));
     } // retranslateUi
 
 };
