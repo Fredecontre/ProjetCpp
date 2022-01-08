@@ -28,6 +28,7 @@ fenetre2::fenetre2(QWidget *parent) :
       ui->P3_Faune->setText("Faune : "+QString::number(Faune::getNbFaune()));
       ui->P3_Conifere->setText("Coniferes : "+QString::number(Conifere::getNbConiferes()));
       ui->P3_Algue->setText("Faune : "+QString::number(Algue::getNbAlgues()));
+      ui->P2_Temps->setText("Temps : "+QString::number(terre->getTemps()));
       ui->P3_Vache_Methane->setText("Methane : "+QString::number(dynamic_cast<Vache*>((terre->getEtresVivants())[1])->getMethane()));
 
 }
@@ -57,5 +58,6 @@ void fenetre2::on_bouton_action_clicked() // bouton passer temps
       ui->P3_Faune->setText("Faune : "+QString::number(Faune::getNbFaune()));
       ui->P3_Conifere->setText("Coniferes : "+QString::number(Conifere::getNbConiferes()));
       ui->P3_Algue->setText("Faune : "+QString::number(Algue::getNbAlgues()));
+      ui->P2_Temps->setText("Temps : "+QString::number(terre->getTemps()));
       ui->P3_Vache_Methane->setText("Methane : "+QString::number(dynamic_cast<Vache*>((terre->getEtresVivants())[1])->getMethane()));
 }

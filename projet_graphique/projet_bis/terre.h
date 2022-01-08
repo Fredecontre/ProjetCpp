@@ -14,6 +14,7 @@ class Terre{
     Terre();
 
     size_t getSante();
+    size_t getTemps(){ return temps;}
     void calculSante(int santeMarin, int santeTerrestre);
     void gestionTemps();
     void ajoutEtreVivant(EtreVivant* etre){EtresVivants.push_back(etre);}

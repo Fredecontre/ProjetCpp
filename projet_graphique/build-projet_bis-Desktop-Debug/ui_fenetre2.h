@@ -41,6 +41,7 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QVBoxLayout *verticalLayout_2;
     QLabel *P2_Terre;
+    QLabel *P2_Temps;
     QSpacerItem *verticalSpacer_14;
     QProgressBar *progressBar;
     QSpacerItem *verticalSpacer_16;
@@ -171,6 +172,11 @@ public:
         P2_Terre->setAlignment(Qt::AlignCenter);
 
         verticalLayout_2->addWidget(P2_Terre);
+
+        P2_Temps = new QLabel(centralwidget);
+        P2_Temps->setObjectName(QStringLiteral("P2_Temps"));
+
+        verticalLayout_2->addWidget(P2_Temps);
 
         verticalSpacer_14 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
@@ -415,6 +421,7 @@ public:
         P1_Eco_Terre_Sante->setText(QApplication::translate("fenetre2", "Sante : X %", Q_NULLPTR));
         P1_Eco_Terre_Image->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
         P2_Terre->setText(QApplication::translate("fenetre2", "Terre", Q_NULLPTR));
+        P2_Temps->setText(QApplication::translate("fenetre2", "<html><head/><body><p>Temps : NB</p></body></html>", Q_NULLPTR));
         P2_Terre_Image->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
         P2_Texte->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
         bouton_fenetre2->setText(QApplication::translate("fenetre2", "retour menu", Q_NULLPTR));

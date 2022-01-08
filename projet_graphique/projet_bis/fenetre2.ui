@@ -171,6 +171,13 @@
        </widget>
       </item>
       <item>
+       <widget class="QLabel" name="P2_Temps">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Temps : NB&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <spacer name="verticalSpacer_14">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
