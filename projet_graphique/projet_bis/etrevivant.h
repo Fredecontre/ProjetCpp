@@ -1,6 +1,15 @@
 #ifndef ETREVIVANT_H
 #define ETREVIVANT_H
+
+
+//Contient toutes les déclarations des classes des différents types d'êtres vivants
+
+#pragma once
+
+class Terre;
 #include <iostream>
+//#include "terre.h"
+
 
 using namespace std;
 
@@ -14,11 +23,13 @@ protected:
         static size_t nbEtresVivants;
 
 public:
-        EtreVivant():age(0),id(nbEtresVivants++){}
+        EtreVivant();
+        EtreVivant(Terre* t);
 
-            virtual void impactEcologique()=0;
+        virtual void impactEcologique()=0;
 
-            static size_t getNbEtresVivants(){return nbEtresVivants;}
+        static size_t getNbEtresVivants(){return nbEtresVivants;}
+        int getImpactEcologique(){ return impactEcolo;}
 
 };
 
@@ -34,8 +45,8 @@ protected:
     static size_t nbFaune;
 
 public:
-    Faune():EtreVivant(){}
-    Faune(size_t consommationEau):consommationEau(consommationEau){}
+    Faune(Terre* terre):EtreVivant(terre){}
+    Faune(size_t consommationEau, Terre* terre):EtreVivant(terre),consommationEau(consommationEau){}
      static size_t getNbFaune(){return nbFaune;}
 
 
@@ -55,7 +66,7 @@ protected:
 
 
 public:
-    Flore():EtreVivant(){}
+    Flore(Terre* terre):EtreVivant(terre){}
     static size_t getNbFlore(){return nbFlore;}
 
 
@@ -70,14 +81,14 @@ public:
 class Humain: public Faune
 {
 protected:
-    size_t niveauTechnologique;
+    static size_t niveauTechnologique;
     static size_t nbHumains;
 
 
 public:
 
 
-    Humain():Faune(100),niveauTechnologique(0){}   //On peut faire commencer à niveau technologique nul et faire avancer l'humanité genre depuis hommes des cavernes
+    Humain(Terre* terre):Faune(100,terre){}
     //Humain(size_t niveauTechnologique, size_t consommationEau):Faune(),niveauTechnologique(niveauTechnologique),consommationEau(consommationEau){}
    void impactEcologique();
 
@@ -100,7 +111,7 @@ protected:
     static size_t nbVaches;
 
 public:
-    Vache():Faune(75),empreinteMethane(100){}
+    Vache(Terre* terre):Faune(75,terre),empreinteMethane(100){}
    //Vache(size_t consommationEau, size_t empreinteMethane):Faune(),consommationEau(consommationEau),empreinteMethane(empreinteMethane){}
 
   void impactEcologique();
@@ -126,7 +137,7 @@ protected:
 
 
 public:
-   Conifere();
+     Conifere(Terre* terre):Flore(terre){}
 
    void impactEcologique();
 

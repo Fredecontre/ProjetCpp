@@ -9,6 +9,7 @@ protected:
     size_t santeEcosysteme;
 public:
     Ecosysteme();
+    void changerSante(int impactEcologique);
 };
 
 
@@ -19,7 +20,7 @@ protected:
 
 public:
     EcosystemeMarin();
-    void changerSante();
+    void changerSante(int impact);
 };
 
 
@@ -30,7 +31,7 @@ protected:
 
 public:
     EcosystemeTerrestre();
-    void changerSante();
+    void changerSante(int impact);
 };
 
 

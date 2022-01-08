@@ -9,8 +9,10 @@ fenetre2::fenetre2(QWidget *parent) :
     ui->setupUi(this);
     //setFixedSize(dw.width()*0.965,dw.height());
     terre = new Terre();
-    Etres.push_back(new Humain());
-    Etres.push_back(new Vache());
+    //Etres.push_back(new Humain(terre));
+    //Etres.push_back(new Vache(terre));
+    Humain* hum = new Humain(terre);
+    Vache* vache = new Vache(terre);
     //QPixmap pix("/home/polytech/build-projet_bis-Desktop-Debug/image_flore.jpg");
     //QPixmap pix(QCoreApplication::applicationDirPath() + "/image_flore.jpg");
     QPixmap pix("image_flore"); // pas de .jpg
@@ -26,7 +28,7 @@ fenetre2::fenetre2(QWidget *parent) :
       ui->P3_Faune->setText("Faune : "+QString::number(Faune::getNbFaune()));
       ui->P3_Conifere->setText("Coniferes : "+QString::number(Conifere::getNbConiferes()));
       ui->P3_Algue->setText("Faune : "+QString::number(Algue::getNbAlgues()));
-      ui->P3_Vache_Methane->setText("Methane : "+QString::number(dynamic_cast<Vache*>(Etres[1])->getMethane()));
+      ui->P3_Vache_Methane->setText("Methane : "+QString::number(dynamic_cast<Vache*>((terre->getEtresVivants())[1])->getMethane()));
 
 }
 
@@ -44,6 +46,8 @@ fenetre2::~fenetre2()
 void fenetre2::on_bouton_action_clicked() // bouton passer temps
 {
     terre->gestionTemps();
+
+    //Mise à jour affichage
     ui->progressBar->setValue(terre->getSante());
     //ui->P3_Flore->setText("Flore : "+QString::number(EtreVivant::getNbEtresVivants()));
 
@@ -53,5 +57,5 @@ void fenetre2::on_bouton_action_clicked() // bouton passer temps
       ui->P3_Faune->setText("Faune : "+QString::number(Faune::getNbFaune()));
       ui->P3_Conifere->setText("Coniferes : "+QString::number(Conifere::getNbConiferes()));
       ui->P3_Algue->setText("Faune : "+QString::number(Algue::getNbAlgues()));
-      ui->P3_Vache_Methane->setText("Methane : "+QString::number(dynamic_cast<Vache*>(Etres[1])->getMethane()));
+      ui->P3_Vache_Methane->setText("Methane : "+QString::number(dynamic_cast<Vache*>((terre->getEtresVivants())[1])->getMethane()));
 }
