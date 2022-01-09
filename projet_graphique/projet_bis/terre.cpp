@@ -6,14 +6,19 @@ Terre::Terre():santeTerre(100), temps(0){
 
 //Fonction générale pour gérer l'ensemble des attributs du jeu
 void Terre::gestionTemps(){
-    santeTerre -=5;
+   santeTerre -=5;
 
     temps+=10;
 
-    /*for(size_t i ; i < EtreVivant::getNbEtresVivants(); i++){
-        santeTerre += EtresVivants[i]->getImpactEcologique();
 
-    }*/
+
+    for(size_t i =0 ; i < EtreVivant::getNbEtresVivants(); i++){
+        //santeTerre += EtresVivants[i]->getImpactEcologique();
+
+    }
+
+    //Bien penser à augmenter l'âge
+    //Si âge dépasse longevité, tuer
 }
 
 //Getteur de la santé de la terre

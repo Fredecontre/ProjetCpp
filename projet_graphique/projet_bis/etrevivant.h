@@ -8,7 +8,7 @@
 
 class Terre;
 #include <iostream>
-//#include "terre.h"
+
 
 
 using namespace std;
@@ -41,7 +41,7 @@ class Faune: public EtreVivant
 {
 protected:
     size_t pollution;
-    size_t consommationEau;
+    size_t consommationEau;  //Entre 1 et 10
     static size_t nbFaune;
 
 public:
@@ -61,12 +61,12 @@ public:
 class Flore: public EtreVivant
 {
 protected:
-    size_t O2;
+    float O2;
     static size_t nbFlore;
 
 
 public:
-    Flore(Terre* terre):EtreVivant(terre){}
+    Flore(Terre* terre, float O2):EtreVivant(terre),O2(O2){}
     static size_t getNbFlore(){return nbFlore;}
 
 
@@ -88,8 +88,8 @@ protected:
 public:
 
 
-    Humain(Terre* terre):Faune(100,terre){}
-    //Humain(size_t niveauTechnologique, size_t consommationEau):Faune(),niveauTechnologique(niveauTechnologique),consommationEau(consommationEau){}
+    Humain(Terre* terre):Faune(6,terre){}
+
    void impactEcologique();
 
    static size_t getNbHumains(){return nbHumains;}
@@ -107,12 +107,11 @@ public:
 class Vache: public Faune
 {
 protected:
-    size_t empreinteMethane;
+    size_t empreinteMethane;  //Entre 1 et 10
     static size_t nbVaches;
 
 public:
-    Vache(Terre* terre):Faune(75,terre),empreinteMethane(100){}
-   //Vache(size_t consommationEau, size_t empreinteMethane):Faune(),consommationEau(consommationEau),empreinteMethane(empreinteMethane){}
+    Vache(Terre* terre):Faune(10,terre),empreinteMethane(10){}
 
   void impactEcologique();
 
@@ -137,7 +136,7 @@ protected:
 
 
 public:
-     Conifere(Terre* terre):Flore(terre){}
+     Conifere(Terre* terre):Flore(terre,0.004){}
 
    void impactEcologique();
 
@@ -161,7 +160,7 @@ protected:
 
 
 public:
-   Algue();
+     Algue(Terre* terre):Flore(terre,0.0008){}
 
    void impactEcologique();
    static size_t getNbAlgues(){return nbAlgues;}
