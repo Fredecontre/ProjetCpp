@@ -30,22 +30,34 @@ class Ui_fenetre2
 {
 public:
     QWidget *centralwidget;
-    QHBoxLayout *horizontalLayout_3;
     QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout_4;
+    QLabel *P1_Eco_Marin;
+    QLabel *P1_Eco_Marin_Sante;
+    QLabel *P1_Eco_Marin_Image;
+    QLabel *P1_Eco_Terre;
+    QLabel *P1_Eco_Terre_Sante;
+    QLabel *P1_Eco_Terre_Image;
+    QSpacerItem *horizontalSpacer_2;
+    QVBoxLayout *verticalLayout_2;
+    QLabel *P2_Terre;
+    QLabel *P2_Temps;
+    QSpacerItem *verticalSpacer_14;
+    QProgressBar *progressBar;
+    QSpacerItem *verticalSpacer_16;
+    QLabel *P2_Terre_Image;
+    QSpacerItem *verticalSpacer_27;
+    QLabel *P2_Texte;
+    QSpacerItem *verticalSpacer_17;
+    QHBoxLayout *horizontalLayout;
     QPushButton *bouton_fenetre2;
     QPushButton *bouton_action;
-    QProgressBar *progressBar;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
     QVBoxLayout *verticalLayout;
     QSpacerItem *verticalSpacer_2;
     QLabel *P3_Titre;
     QSpacerItem *verticalSpacer;
     QLabel *P3_Flore;
     QSpacerItem *verticalSpacer_10;
-    QLabel *P3_Flore_Image;
     QSpacerItem *verticalSpacer_11;
     QLabel *P3_Conifere;
     QSpacerItem *verticalSpacer_5;
@@ -57,7 +69,6 @@ public:
     QSpacerItem *verticalSpacer_4;
     QLabel *P3_Faune;
     QSpacerItem *verticalSpacer_12;
-    QLabel *P3_Faune_Image;
     QSpacerItem *verticalSpacer_13;
     QLabel *P3_Humain;
     QSpacerItem *verticalSpacer_7;
@@ -66,57 +77,165 @@ public:
     QLabel *P3_Vache;
     QSpacerItem *verticalSpacer_8;
     QLabel *P3_Vache_Methane;
+    QSpacerItem *verticalSpacer_15;
     QSpacerItem *horizontalSpacer;
 
     void setupUi(QMainWindow *fenetre2)
     {
         if (fenetre2->objectName().isEmpty())
             fenetre2->setObjectName(QStringLiteral("fenetre2"));
-        fenetre2->resize(948, 487);
+        fenetre2->resize(958, 481);
         centralwidget = new QWidget(fenetre2);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
-        horizontalLayout_3 = new QHBoxLayout(centralwidget);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        gridLayout = new QGridLayout();
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Ignored);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(centralwidget->sizePolicy().hasHeightForWidth());
+        centralwidget->setSizePolicy(sizePolicy);
+        gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        bouton_fenetre2 = new QPushButton(centralwidget);
-        bouton_fenetre2->setObjectName(QStringLiteral("bouton_fenetre2"));
+        gridLayout->setSizeConstraint(QLayout::SetNoConstraint);
+        gridLayout->setHorizontalSpacing(6);
+        gridLayout->setVerticalSpacing(0);
+        gridLayout->setContentsMargins(0, 0, 0, -1);
+        verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        P1_Eco_Marin = new QLabel(centralwidget);
+        P1_Eco_Marin->setObjectName(QStringLiteral("P1_Eco_Marin"));
+        QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(P1_Eco_Marin->sizePolicy().hasHeightForWidth());
+        P1_Eco_Marin->setSizePolicy(sizePolicy1);
 
-        gridLayout->addWidget(bouton_fenetre2, 0, 3, 1, 1);
+        verticalLayout_4->addWidget(P1_Eco_Marin);
 
-        bouton_action = new QPushButton(centralwidget);
-        bouton_action->setObjectName(QStringLiteral("bouton_action"));
+        P1_Eco_Marin_Sante = new QLabel(centralwidget);
+        P1_Eco_Marin_Sante->setObjectName(QStringLiteral("P1_Eco_Marin_Sante"));
+        sizePolicy1.setHeightForWidth(P1_Eco_Marin_Sante->sizePolicy().hasHeightForWidth());
+        P1_Eco_Marin_Sante->setSizePolicy(sizePolicy1);
+        P1_Eco_Marin_Sante->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        P1_Eco_Marin_Sante->setMargin(0);
+        P1_Eco_Marin_Sante->setIndent(20);
 
-        gridLayout->addWidget(bouton_action, 0, 0, 1, 1);
+        verticalLayout_4->addWidget(P1_Eco_Marin_Sante);
+
+        P1_Eco_Marin_Image = new QLabel(centralwidget);
+        P1_Eco_Marin_Image->setObjectName(QStringLiteral("P1_Eco_Marin_Image"));
+        QSizePolicy sizePolicy2(QSizePolicy::Ignored, QSizePolicy::MinimumExpanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(P1_Eco_Marin_Image->sizePolicy().hasHeightForWidth());
+        P1_Eco_Marin_Image->setSizePolicy(sizePolicy2);
+
+        verticalLayout_4->addWidget(P1_Eco_Marin_Image);
+
+        P1_Eco_Terre = new QLabel(centralwidget);
+        P1_Eco_Terre->setObjectName(QStringLiteral("P1_Eco_Terre"));
+        sizePolicy1.setHeightForWidth(P1_Eco_Terre->sizePolicy().hasHeightForWidth());
+        P1_Eco_Terre->setSizePolicy(sizePolicy1);
+
+        verticalLayout_4->addWidget(P1_Eco_Terre);
+
+        P1_Eco_Terre_Sante = new QLabel(centralwidget);
+        P1_Eco_Terre_Sante->setObjectName(QStringLiteral("P1_Eco_Terre_Sante"));
+        sizePolicy1.setHeightForWidth(P1_Eco_Terre_Sante->sizePolicy().hasHeightForWidth());
+        P1_Eco_Terre_Sante->setSizePolicy(sizePolicy1);
+        P1_Eco_Terre_Sante->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        P1_Eco_Terre_Sante->setIndent(20);
+
+        verticalLayout_4->addWidget(P1_Eco_Terre_Sante);
+
+        P1_Eco_Terre_Image = new QLabel(centralwidget);
+        P1_Eco_Terre_Image->setObjectName(QStringLiteral("P1_Eco_Terre_Image"));
+        sizePolicy2.setHeightForWidth(P1_Eco_Terre_Image->sizePolicy().hasHeightForWidth());
+        P1_Eco_Terre_Image->setSizePolicy(sizePolicy2);
+
+        verticalLayout_4->addWidget(P1_Eco_Terre_Image);
+
+        horizontalSpacer_2 = new QSpacerItem(150, 0, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        verticalLayout_4->addItem(horizontalSpacer_2);
+
+
+        gridLayout->addLayout(verticalLayout_4, 0, 0, 1, 1);
+
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        P2_Terre = new QLabel(centralwidget);
+        P2_Terre->setObjectName(QStringLiteral("P2_Terre"));
+        QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(P2_Terre->sizePolicy().hasHeightForWidth());
+        P2_Terre->setSizePolicy(sizePolicy3);
+        P2_Terre->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_2->addWidget(P2_Terre);
+
+        P2_Temps = new QLabel(centralwidget);
+        P2_Temps->setObjectName(QStringLiteral("P2_Temps"));
+
+        verticalLayout_2->addWidget(P2_Temps);
+
+        verticalSpacer_14 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        verticalLayout_2->addItem(verticalSpacer_14);
 
         progressBar = new QProgressBar(centralwidget);
         progressBar->setObjectName(QStringLiteral("progressBar"));
         progressBar->setValue(100);
 
-        gridLayout->addWidget(progressBar, 0, 2, 1, 1);
+        verticalLayout_2->addWidget(progressBar);
 
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        verticalSpacer_16 = new QSpacerItem(0, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-        gridLayout->addWidget(pushButton, 0, 1, 1, 1);
+        verticalLayout_2->addItem(verticalSpacer_16);
 
-        pushButton_2 = new QPushButton(centralwidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        P2_Terre_Image = new QLabel(centralwidget);
+        P2_Terre_Image->setObjectName(QStringLiteral("P2_Terre_Image"));
+        sizePolicy2.setHeightForWidth(P2_Terre_Image->sizePolicy().hasHeightForWidth());
+        P2_Terre_Image->setSizePolicy(sizePolicy2);
+        P2_Terre_Image->setScaledContents(true);
+        P2_Terre_Image->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
-        gridLayout->addWidget(pushButton_2, 1, 2, 1, 1);
+        verticalLayout_2->addWidget(P2_Terre_Image);
 
-        pushButton_3 = new QPushButton(centralwidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        verticalSpacer_27 = new QSpacerItem(0, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-        gridLayout->addWidget(pushButton_3, 1, 0, 1, 1);
+        verticalLayout_2->addItem(verticalSpacer_27);
 
-        pushButton_4 = new QPushButton(centralwidget);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        P2_Texte = new QLabel(centralwidget);
+        P2_Texte->setObjectName(QStringLiteral("P2_Texte"));
+        QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(P2_Texte->sizePolicy().hasHeightForWidth());
+        P2_Texte->setSizePolicy(sizePolicy4);
 
-        gridLayout->addWidget(pushButton_4, 1, 1, 1, 1);
+        verticalLayout_2->addWidget(P2_Texte);
+
+        verticalSpacer_17 = new QSpacerItem(0, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        verticalLayout_2->addItem(verticalSpacer_17);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        bouton_fenetre2 = new QPushButton(centralwidget);
+        bouton_fenetre2->setObjectName(QStringLiteral("bouton_fenetre2"));
+
+        horizontalLayout->addWidget(bouton_fenetre2);
+
+        bouton_action = new QPushButton(centralwidget);
+        bouton_action->setObjectName(QStringLiteral("bouton_action"));
+
+        horizontalLayout->addWidget(bouton_action);
 
 
-        horizontalLayout_3->addLayout(gridLayout);
+        verticalLayout_2->addLayout(horizontalLayout);
+
+
+        gridLayout->addLayout(verticalLayout_2, 0, 1, 1, 1);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(0);
@@ -128,11 +247,11 @@ public:
 
         P3_Titre = new QLabel(centralwidget);
         P3_Titre->setObjectName(QStringLiteral("P3_Titre"));
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(P3_Titre->sizePolicy().hasHeightForWidth());
-        P3_Titre->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy5(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy5.setHorizontalStretch(0);
+        sizePolicy5.setVerticalStretch(0);
+        sizePolicy5.setHeightForWidth(P3_Titre->sizePolicy().hasHeightForWidth());
+        P3_Titre->setSizePolicy(sizePolicy5);
         QFont font;
         font.setPointSize(12);
         P3_Titre->setFont(font);
@@ -146,8 +265,11 @@ public:
 
         P3_Flore = new QLabel(centralwidget);
         P3_Flore->setObjectName(QStringLiteral("P3_Flore"));
-        sizePolicy.setHeightForWidth(P3_Flore->sizePolicy().hasHeightForWidth());
-        P3_Flore->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy6(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy6.setHorizontalStretch(0);
+        sizePolicy6.setVerticalStretch(0);
+        sizePolicy6.setHeightForWidth(P3_Flore->sizePolicy().hasHeightForWidth());
+        P3_Flore->setSizePolicy(sizePolicy6);
 
         verticalLayout->addWidget(P3_Flore);
 
@@ -155,24 +277,15 @@ public:
 
         verticalLayout->addItem(verticalSpacer_10);
 
-        P3_Flore_Image = new QLabel(centralwidget);
-        P3_Flore_Image->setObjectName(QStringLiteral("P3_Flore_Image"));
-        P3_Flore_Image->setEnabled(true);
-        sizePolicy.setHeightForWidth(P3_Flore_Image->sizePolicy().hasHeightForWidth());
-        P3_Flore_Image->setSizePolicy(sizePolicy);
-        P3_Flore_Image->setFrameShape(QFrame::NoFrame);
-        P3_Flore_Image->setFrameShadow(QFrame::Plain);
-
-        verticalLayout->addWidget(P3_Flore_Image);
-
         verticalSpacer_11 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout->addItem(verticalSpacer_11);
 
         P3_Conifere = new QLabel(centralwidget);
         P3_Conifere->setObjectName(QStringLiteral("P3_Conifere"));
-        sizePolicy.setHeightForWidth(P3_Conifere->sizePolicy().hasHeightForWidth());
-        P3_Conifere->setSizePolicy(sizePolicy);
+        sizePolicy5.setHeightForWidth(P3_Conifere->sizePolicy().hasHeightForWidth());
+        P3_Conifere->setSizePolicy(sizePolicy5);
+        P3_Conifere->setIndent(10);
 
         verticalLayout->addWidget(P3_Conifere);
 
@@ -182,9 +295,10 @@ public:
 
         P3_Conifere_O2 = new QLabel(centralwidget);
         P3_Conifere_O2->setObjectName(QStringLiteral("P3_Conifere_O2"));
-        sizePolicy.setHeightForWidth(P3_Conifere_O2->sizePolicy().hasHeightForWidth());
-        P3_Conifere_O2->setSizePolicy(sizePolicy);
-        P3_Conifere_O2->setAlignment(Qt::AlignCenter);
+        sizePolicy5.setHeightForWidth(P3_Conifere_O2->sizePolicy().hasHeightForWidth());
+        P3_Conifere_O2->setSizePolicy(sizePolicy5);
+        P3_Conifere_O2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        P3_Conifere_O2->setIndent(20);
 
         verticalLayout->addWidget(P3_Conifere_O2);
 
@@ -194,8 +308,9 @@ public:
 
         P3_Algue = new QLabel(centralwidget);
         P3_Algue->setObjectName(QStringLiteral("P3_Algue"));
-        sizePolicy.setHeightForWidth(P3_Algue->sizePolicy().hasHeightForWidth());
-        P3_Algue->setSizePolicy(sizePolicy);
+        sizePolicy5.setHeightForWidth(P3_Algue->sizePolicy().hasHeightForWidth());
+        P3_Algue->setSizePolicy(sizePolicy5);
+        P3_Algue->setIndent(10);
 
         verticalLayout->addWidget(P3_Algue);
 
@@ -205,10 +320,10 @@ public:
 
         P3_Algue_O2 = new QLabel(centralwidget);
         P3_Algue_O2->setObjectName(QStringLiteral("P3_Algue_O2"));
-        sizePolicy.setHeightForWidth(P3_Algue_O2->sizePolicy().hasHeightForWidth());
-        P3_Algue_O2->setSizePolicy(sizePolicy);
-        P3_Algue_O2->setAlignment(Qt::AlignCenter);
-        P3_Algue_O2->setIndent(-1);
+        sizePolicy5.setHeightForWidth(P3_Algue_O2->sizePolicy().hasHeightForWidth());
+        P3_Algue_O2->setSizePolicy(sizePolicy5);
+        P3_Algue_O2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        P3_Algue_O2->setIndent(20);
 
         verticalLayout->addWidget(P3_Algue_O2);
 
@@ -218,8 +333,8 @@ public:
 
         P3_Faune = new QLabel(centralwidget);
         P3_Faune->setObjectName(QStringLiteral("P3_Faune"));
-        sizePolicy.setHeightForWidth(P3_Faune->sizePolicy().hasHeightForWidth());
-        P3_Faune->setSizePolicy(sizePolicy);
+        sizePolicy5.setHeightForWidth(P3_Faune->sizePolicy().hasHeightForWidth());
+        P3_Faune->setSizePolicy(sizePolicy5);
 
         verticalLayout->addWidget(P3_Faune);
 
@@ -227,21 +342,15 @@ public:
 
         verticalLayout->addItem(verticalSpacer_12);
 
-        P3_Faune_Image = new QLabel(centralwidget);
-        P3_Faune_Image->setObjectName(QStringLiteral("P3_Faune_Image"));
-        sizePolicy.setHeightForWidth(P3_Faune_Image->sizePolicy().hasHeightForWidth());
-        P3_Faune_Image->setSizePolicy(sizePolicy);
-
-        verticalLayout->addWidget(P3_Faune_Image);
-
         verticalSpacer_13 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout->addItem(verticalSpacer_13);
 
         P3_Humain = new QLabel(centralwidget);
         P3_Humain->setObjectName(QStringLiteral("P3_Humain"));
-        sizePolicy.setHeightForWidth(P3_Humain->sizePolicy().hasHeightForWidth());
-        P3_Humain->setSizePolicy(sizePolicy);
+        sizePolicy5.setHeightForWidth(P3_Humain->sizePolicy().hasHeightForWidth());
+        P3_Humain->setSizePolicy(sizePolicy5);
+        P3_Humain->setIndent(10);
 
         verticalLayout->addWidget(P3_Humain);
 
@@ -251,12 +360,10 @@ public:
 
         P3_Humain_CO2 = new QLabel(centralwidget);
         P3_Humain_CO2->setObjectName(QStringLiteral("P3_Humain_CO2"));
-        QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(P3_Humain_CO2->sizePolicy().hasHeightForWidth());
-        P3_Humain_CO2->setSizePolicy(sizePolicy1);
-        P3_Humain_CO2->setAlignment(Qt::AlignCenter);
+        sizePolicy5.setHeightForWidth(P3_Humain_CO2->sizePolicy().hasHeightForWidth());
+        P3_Humain_CO2->setSizePolicy(sizePolicy5);
+        P3_Humain_CO2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        P3_Humain_CO2->setIndent(20);
 
         verticalLayout->addWidget(P3_Humain_CO2);
 
@@ -266,8 +373,9 @@ public:
 
         P3_Vache = new QLabel(centralwidget);
         P3_Vache->setObjectName(QStringLiteral("P3_Vache"));
-        sizePolicy.setHeightForWidth(P3_Vache->sizePolicy().hasHeightForWidth());
-        P3_Vache->setSizePolicy(sizePolicy);
+        sizePolicy5.setHeightForWidth(P3_Vache->sizePolicy().hasHeightForWidth());
+        P3_Vache->setSizePolicy(sizePolicy5);
+        P3_Vache->setIndent(10);
 
         verticalLayout->addWidget(P3_Vache);
 
@@ -277,18 +385,23 @@ public:
 
         P3_Vache_Methane = new QLabel(centralwidget);
         P3_Vache_Methane->setObjectName(QStringLiteral("P3_Vache_Methane"));
-        sizePolicy.setHeightForWidth(P3_Vache_Methane->sizePolicy().hasHeightForWidth());
-        P3_Vache_Methane->setSizePolicy(sizePolicy);
-        P3_Vache_Methane->setAlignment(Qt::AlignCenter);
+        sizePolicy5.setHeightForWidth(P3_Vache_Methane->sizePolicy().hasHeightForWidth());
+        P3_Vache_Methane->setSizePolicy(sizePolicy5);
+        P3_Vache_Methane->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        P3_Vache_Methane->setIndent(20);
 
         verticalLayout->addWidget(P3_Vache_Methane);
+
+        verticalSpacer_15 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer_15);
 
         horizontalSpacer = new QSpacerItem(150, 0, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         verticalLayout->addItem(horizontalSpacer);
 
 
-        horizontalLayout_3->addLayout(verticalLayout);
+        gridLayout->addLayout(verticalLayout, 0, 2, 1, 1);
 
         fenetre2->setCentralWidget(centralwidget);
 
@@ -301,25 +414,29 @@ public:
     void retranslateUi(QMainWindow *fenetre2)
     {
         fenetre2->setWindowTitle(QApplication::translate("fenetre2", "MainWindow", Q_NULLPTR));
+        P1_Eco_Marin->setText(QApplication::translate("fenetre2", "Ecosysteme Marin", Q_NULLPTR));
+        P1_Eco_Marin_Sante->setText(QApplication::translate("fenetre2", "Sante : X %", Q_NULLPTR));
+        P1_Eco_Marin_Image->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
+        P1_Eco_Terre->setText(QApplication::translate("fenetre2", "Ecosyst\303\250me Terrestre", Q_NULLPTR));
+        P1_Eco_Terre_Sante->setText(QApplication::translate("fenetre2", "Sante : X %", Q_NULLPTR));
+        P1_Eco_Terre_Image->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
+        P2_Terre->setText(QApplication::translate("fenetre2", "Terre", Q_NULLPTR));
+        P2_Temps->setText(QApplication::translate("fenetre2", "<html><head/><body><p>Temps : NB</p></body></html>", Q_NULLPTR));
+        P2_Terre_Image->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
+        P2_Texte->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
         bouton_fenetre2->setText(QApplication::translate("fenetre2", "retour menu", Q_NULLPTR));
         bouton_action->setText(QApplication::translate("fenetre2", "passer temps", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("fenetre2", "PushButton", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("fenetre2", "PushButton", Q_NULLPTR));
-        pushButton_3->setText(QApplication::translate("fenetre2", "PushButton", Q_NULLPTR));
-        pushButton_4->setText(QApplication::translate("fenetre2", "PushButton", Q_NULLPTR));
         P3_Titre->setText(QApplication::translate("fenetre2", "Informations", Q_NULLPTR));
         P3_Flore->setText(QApplication::translate("fenetre2", "Flore : NB", Q_NULLPTR));
-        P3_Flore_Image->setText(QString());
         P3_Conifere->setText(QApplication::translate("fenetre2", "Conif\303\250res : NB", Q_NULLPTR));
         P3_Conifere_O2->setText(QApplication::translate("fenetre2", "O2 : X %", Q_NULLPTR));
         P3_Algue->setText(QApplication::translate("fenetre2", "Algues : NB", Q_NULLPTR));
         P3_Algue_O2->setText(QApplication::translate("fenetre2", "O2 : X %", Q_NULLPTR));
         P3_Faune->setText(QApplication::translate("fenetre2", "Faune : NB", Q_NULLPTR));
-        P3_Faune_Image->setText(QString());
         P3_Humain->setText(QApplication::translate("fenetre2", "Humains : NB", Q_NULLPTR));
         P3_Humain_CO2->setText(QApplication::translate("fenetre2", "CO2 : X %", Q_NULLPTR));
         P3_Vache->setText(QApplication::translate("fenetre2", "Vaches : NB", Q_NULLPTR));
-        P3_Vache_Methane->setText(QApplication::translate("fenetre2", "Methane: X %", Q_NULLPTR));
+        P3_Vache_Methane->setText(QApplication::translate("fenetre2", "Methane :", Q_NULLPTR));
     } // retranslateUi
 
 };
