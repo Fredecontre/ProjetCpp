@@ -15,7 +15,7 @@ class fenetre2 : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit fenetre2(QWidget *parent = 0, int nbHumain=0, int nbVache=0, int nbConifere=0,int nbAlgue=0);
+    explicit fenetre2(QWidget *parent = 0, int nbHumain=0, int nbVache=0, int nbConifere=0, int nbAlgue=0);
     ~fenetre2();
 
 private slots:
@@ -29,7 +29,7 @@ private:
     Ui::fenetre2 *ui;
     QDesktopWidget dw;
     Terre *terre;
-    vector<EtreVivant*> Etres;
+
 };
 
 #endif // FENETRE2_H

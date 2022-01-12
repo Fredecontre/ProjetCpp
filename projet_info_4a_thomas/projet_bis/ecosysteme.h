@@ -1,15 +1,23 @@
 #ifndef ECOSYSTEME_H
 #define ECOSYSTEME_H
+
+#pragma once
+
 #include <iostream>
 
+
+class Terre;
+
 using namespace std;
+
+
 class Ecosysteme
 {
 protected:
     size_t santeEcosysteme;
 public:
     Ecosysteme();
-    void changerSante(int impactEcologique);
+    virtual void changerSante(Terre* terre)=0;
 };
 
 
@@ -20,7 +28,7 @@ protected:
 
 public:
     EcosystemeMarin();
-    void changerSante(int impact);
+    void changerSante(Terre* terre);
 };
 
 
@@ -31,7 +39,7 @@ protected:
 
 public:
     EcosystemeTerrestre();
-    void changerSante(int impact);
+    void changerSante(Terre* terre);
 };
 
 

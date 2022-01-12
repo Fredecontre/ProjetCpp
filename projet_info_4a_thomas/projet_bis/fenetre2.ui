@@ -217,7 +217,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="P2_Terre_Image">
+       <widget class="QLabel" name="P2_Texte_Evev">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Ignored" vsizetype="MinimumExpanding">
           <horstretch>0</horstretch>
@@ -252,16 +252,40 @@
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="P2_Texte">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+       <widget class="QGroupBox" name="P2_GroupBox">
+        <property name="title">
+         <string>Faites le bon choix !</string>
         </property>
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QRadioButton" name="P2_button_choix1">
+           <property name="text">
+            <string>RadioButton</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="P2_button_choix2">
+           <property name="text">
+            <string>RadioButton</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="P2_button_choix3">
+           <property name="text">
+            <string>RadioButton</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="P2_button_choix4">
+           <property name="text">
+            <string>RadioButton</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
       <item>
