@@ -28,9 +28,15 @@ public:
 
         virtual void impactEcologique()=0;
 
-        static size_t getNbEtresVivants(){return nbEtresVivants;}
-        int getImpactEcologique(){ return impactEcolo;}
 
+        bool operator== (const EtreVivant& e) const;
+
+
+        static size_t getNbEtresVivants(){return nbEtresVivants;}
+        int getImpactEcologique() const{ return impactEcolo;}
+        size_t getAge() const{ return age;}
+        size_t getID() const{ return id;}
+        size_t getLongevite() const{ return longevite;}
 };
 
 
@@ -90,14 +96,18 @@ public:
 
     Humain(Terre* terre):Faune(6,terre){}
 
+    bool operator== (const Humain& e) const;
+
    void impactEcologique();
 
    static size_t getNbHumains(){return nbHumains;}
+   friend std::ostream&  operator<<(std::ostream& o,const Humain & e);
 
 
 
 
 };
+
 
 
 
@@ -118,6 +128,8 @@ public:
    static size_t getNbVaches(){return nbVaches;}
    size_t getMethane(){return empreinteMethane;}
 
+   bool operator== (const Vache& v) const;
+   friend std::ostream& operator<<(std::ostream& o,const Vache & v);
 
 
 };

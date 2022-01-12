@@ -14,8 +14,26 @@ size_t Vache::nbVaches = 25;
 size_t Conifere::nbConiferes = 25;
 size_t Algue::nbAlgues = 25;
 
+std::ostream& operator<<(std::ostream& o,const Humain & e){
 
-EtreVivant::EtreVivant(Terre* t):age(0),id(nbEtresVivants++){ //terre.EtresVivants.push_back(this);
+
+    o<< "Age: " + to_string(e.getAge())<<endl;
+    o<< "Espérance de vie: " + to_string(e.getLongevite())<<endl;
+    o<< "Impact écologique: " + to_string(e.getImpactEcologique())<<endl;
+
+    return o;
+
+}
+
+bool Humain::operator== (const Humain& e) const{
+
+    return(this->getAge() == e.getAge() && this->getLongevite() == e.getLongevite() && this->getImpactEcologique() ==
+           e.getImpactEcologique());
+
+}
+
+
+EtreVivant::EtreVivant(Terre* t):age(),id(nbEtresVivants++){ 
    t->ajoutEtreVivant(this);
 }
 
@@ -42,4 +60,23 @@ void Algue::impactEcologique(){
 
 
    impactEcolo =10000*O2;
+}
+
+
+std::ostream& operator<<(std::ostream& o,const Vache & v){
+
+
+    o<< "Age: " + to_string(v.getAge())<<endl;
+    o<< "Espérance de vie: " + to_string(v.getLongevite())<<endl;
+    o<< "Impact écologique: " + to_string(v.getImpactEcologique())<<endl;
+
+    return o;
+
+}
+
+bool Vache::operator== (const Vache& v) const{
+
+    return(this->getAge() == v.getAge() && this->getLongevite() == v.getLongevite() && this->getImpactEcologique() ==
+           v.getImpactEcologique());
+
 }
