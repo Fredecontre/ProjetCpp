@@ -154,6 +154,9 @@ public:
 
     static size_t getNbConiferes(){return nbConiferes;}
 
+    bool operator== (const Conifere& c) const;
+    friend std::ostream& operator<<(std::ostream& o,const Conifere & c);
+
 
 
 };
@@ -176,6 +179,9 @@ public:
 
    void impactEcologique();
    static size_t getNbAlgues(){return nbAlgues;}
+
+   bool operator== (const Algue& a) const;
+   friend std::ostream& operator<<(std::ostream& o,const Algue & a);
 
 
 

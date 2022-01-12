@@ -13,11 +13,15 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QRadioButton>
+#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -26,28 +30,167 @@ class Ui_fenetre1
 {
 public:
     QWidget *centralwidget;
+    QHBoxLayout *horizontalLayout;
+    QVBoxLayout *verticalLayout_6;
+    QLabel *Titre_page;
+    QLabel *description_jeu;
+    QSpacerItem *horizontalSpacer;
+    QVBoxLayout *verticalLayout_5;
+    QGroupBox *groupBoxHumain;
+    QVBoxLayout *verticalLayout;
+    QRadioButton *button_humain_choix1;
+    QRadioButton *button_humain_choix2;
+    QRadioButton *button_humain_choix3;
+    QGroupBox *groupBoxVache;
+    QVBoxLayout *verticalLayout_2;
+    QRadioButton *button_vache_choix1;
+    QRadioButton *button_vache_choix2;
+    QRadioButton *button_vache_choix3;
+    QGroupBox *groupBox_Conifere;
+    QVBoxLayout *verticalLayout_3;
+    QRadioButton *button_conifere_choix1;
+    QRadioButton *button_conifere_choix2;
+    QRadioButton *button_conifere_choix3;
+    QGroupBox *groupBox_Algue;
+    QVBoxLayout *verticalLayout_4;
+    QRadioButton *button_algue_choix1;
+    QRadioButton *button_algue_choix2;
+    QRadioButton *button_algue_choix3;
     QPushButton *bouton_fenetre1;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
 
     void setupUi(QMainWindow *fenetre1)
     {
         if (fenetre1->objectName().isEmpty())
             fenetre1->setObjectName(QStringLiteral("fenetre1"));
-        fenetre1->resize(800, 600);
+        fenetre1->resize(962, 565);
         centralwidget = new QWidget(fenetre1);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
+        horizontalLayout = new QHBoxLayout(centralwidget);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        verticalLayout_6 = new QVBoxLayout();
+        verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
+        Titre_page = new QLabel(centralwidget);
+        Titre_page->setObjectName(QStringLiteral("Titre_page"));
+        QFont font;
+        font.setPointSize(50);
+        Titre_page->setFont(font);
+        Titre_page->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
+
+        verticalLayout_6->addWidget(Titre_page);
+
+        description_jeu = new QLabel(centralwidget);
+        description_jeu->setObjectName(QStringLiteral("description_jeu"));
+        description_jeu->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+
+        verticalLayout_6->addWidget(description_jeu);
+
+        horizontalSpacer = new QSpacerItem(40, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        verticalLayout_6->addItem(horizontalSpacer);
+
+
+        horizontalLayout->addLayout(verticalLayout_6);
+
+        verticalLayout_5 = new QVBoxLayout();
+        verticalLayout_5->setSpacing(0);
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        groupBoxHumain = new QGroupBox(centralwidget);
+        groupBoxHumain->setObjectName(QStringLiteral("groupBoxHumain"));
+        verticalLayout = new QVBoxLayout(groupBoxHumain);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        button_humain_choix1 = new QRadioButton(groupBoxHumain);
+        button_humain_choix1->setObjectName(QStringLiteral("button_humain_choix1"));
+
+        verticalLayout->addWidget(button_humain_choix1);
+
+        button_humain_choix2 = new QRadioButton(groupBoxHumain);
+        button_humain_choix2->setObjectName(QStringLiteral("button_humain_choix2"));
+
+        verticalLayout->addWidget(button_humain_choix2);
+
+        button_humain_choix3 = new QRadioButton(groupBoxHumain);
+        button_humain_choix3->setObjectName(QStringLiteral("button_humain_choix3"));
+
+        verticalLayout->addWidget(button_humain_choix3);
+
+
+        verticalLayout_5->addWidget(groupBoxHumain);
+
+        groupBoxVache = new QGroupBox(centralwidget);
+        groupBoxVache->setObjectName(QStringLiteral("groupBoxVache"));
+        verticalLayout_2 = new QVBoxLayout(groupBoxVache);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        button_vache_choix1 = new QRadioButton(groupBoxVache);
+        button_vache_choix1->setObjectName(QStringLiteral("button_vache_choix1"));
+
+        verticalLayout_2->addWidget(button_vache_choix1);
+
+        button_vache_choix2 = new QRadioButton(groupBoxVache);
+        button_vache_choix2->setObjectName(QStringLiteral("button_vache_choix2"));
+
+        verticalLayout_2->addWidget(button_vache_choix2);
+
+        button_vache_choix3 = new QRadioButton(groupBoxVache);
+        button_vache_choix3->setObjectName(QStringLiteral("button_vache_choix3"));
+
+        verticalLayout_2->addWidget(button_vache_choix3);
+
+
+        verticalLayout_5->addWidget(groupBoxVache);
+
+        groupBox_Conifere = new QGroupBox(centralwidget);
+        groupBox_Conifere->setObjectName(QStringLiteral("groupBox_Conifere"));
+        verticalLayout_3 = new QVBoxLayout(groupBox_Conifere);
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        button_conifere_choix1 = new QRadioButton(groupBox_Conifere);
+        button_conifere_choix1->setObjectName(QStringLiteral("button_conifere_choix1"));
+
+        verticalLayout_3->addWidget(button_conifere_choix1);
+
+        button_conifere_choix2 = new QRadioButton(groupBox_Conifere);
+        button_conifere_choix2->setObjectName(QStringLiteral("button_conifere_choix2"));
+
+        verticalLayout_3->addWidget(button_conifere_choix2);
+
+        button_conifere_choix3 = new QRadioButton(groupBox_Conifere);
+        button_conifere_choix3->setObjectName(QStringLiteral("button_conifere_choix3"));
+
+        verticalLayout_3->addWidget(button_conifere_choix3);
+
+
+        verticalLayout_5->addWidget(groupBox_Conifere);
+
+        groupBox_Algue = new QGroupBox(centralwidget);
+        groupBox_Algue->setObjectName(QStringLiteral("groupBox_Algue"));
+        verticalLayout_4 = new QVBoxLayout(groupBox_Algue);
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        button_algue_choix1 = new QRadioButton(groupBox_Algue);
+        button_algue_choix1->setObjectName(QStringLiteral("button_algue_choix1"));
+
+        verticalLayout_4->addWidget(button_algue_choix1);
+
+        button_algue_choix2 = new QRadioButton(groupBox_Algue);
+        button_algue_choix2->setObjectName(QStringLiteral("button_algue_choix2"));
+
+        verticalLayout_4->addWidget(button_algue_choix2);
+
+        button_algue_choix3 = new QRadioButton(groupBox_Algue);
+        button_algue_choix3->setObjectName(QStringLiteral("button_algue_choix3"));
+
+        verticalLayout_4->addWidget(button_algue_choix3);
+
+
+        verticalLayout_5->addWidget(groupBox_Algue);
+
         bouton_fenetre1 = new QPushButton(centralwidget);
         bouton_fenetre1->setObjectName(QStringLiteral("bouton_fenetre1"));
-        bouton_fenetre1->setGeometry(QRect(380, 200, 89, 25));
+
+        verticalLayout_5->addWidget(bouton_fenetre1);
+
+
+        horizontalLayout->addLayout(verticalLayout_5);
+
         fenetre1->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(fenetre1);
-        menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 22));
-        fenetre1->setMenuBar(menubar);
-        statusbar = new QStatusBar(fenetre1);
-        statusbar->setObjectName(QStringLiteral("statusbar"));
-        fenetre1->setStatusBar(statusbar);
 
         retranslateUi(fenetre1);
 
@@ -57,6 +200,45 @@ public:
     void retranslateUi(QMainWindow *fenetre1)
     {
         fenetre1->setWindowTitle(QApplication::translate("fenetre1", "MainWindow", Q_NULLPTR));
+        Titre_page->setText(QApplication::translate("fenetre1", "Hands on earth", Q_NULLPTR));
+        description_jeu->setText(QApplication::translate("fenetre1", "Description jeu : \n"
+"blablabla \n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa\n"
+" blablablaaaaaaaaaaaaa", Q_NULLPTR));
+        groupBoxHumain->setTitle(QApplication::translate("fenetre1", "Nombres  humains", Q_NULLPTR));
+        button_humain_choix1->setText(QApplication::translate("fenetre1", "100", Q_NULLPTR));
+        button_humain_choix2->setText(QApplication::translate("fenetre1", "1000", Q_NULLPTR));
+        button_humain_choix3->setText(QApplication::translate("fenetre1", "2000", Q_NULLPTR));
+        groupBoxVache->setTitle(QApplication::translate("fenetre1", "Nombres Vaches", Q_NULLPTR));
+        button_vache_choix1->setText(QApplication::translate("fenetre1", "10", Q_NULLPTR));
+        button_vache_choix2->setText(QApplication::translate("fenetre1", "100", Q_NULLPTR));
+        button_vache_choix3->setText(QApplication::translate("fenetre1", "200", Q_NULLPTR));
+        groupBox_Conifere->setTitle(QApplication::translate("fenetre1", "Nombres Conif\303\250res", Q_NULLPTR));
+        button_conifere_choix1->setText(QApplication::translate("fenetre1", "8000", Q_NULLPTR));
+        button_conifere_choix2->setText(QApplication::translate("fenetre1", "10000", Q_NULLPTR));
+        button_conifere_choix3->setText(QApplication::translate("fenetre1", "20000", Q_NULLPTR));
+        groupBox_Algue->setTitle(QApplication::translate("fenetre1", "Nombres algues", Q_NULLPTR));
+        button_algue_choix1->setText(QApplication::translate("fenetre1", "40000", Q_NULLPTR));
+        button_algue_choix2->setText(QApplication::translate("fenetre1", "80000", Q_NULLPTR));
+        button_algue_choix3->setText(QApplication::translate("fenetre1", "100000", Q_NULLPTR));
         bouton_fenetre1->setText(QApplication::translate("fenetre1", "go", Q_NULLPTR));
     } // retranslateUi
 

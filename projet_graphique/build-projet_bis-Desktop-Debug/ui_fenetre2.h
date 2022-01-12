@@ -72,11 +72,13 @@ public:
     QSpacerItem *verticalSpacer_13;
     QLabel *P3_Humain;
     QSpacerItem *verticalSpacer_7;
-    QLabel *P3_Humain_CO2;
+    QLabel *P3_Humain_pollution;
+    QSpacerItem *verticalSpacer_18;
+    QLabel *P3_Humain_nv_tech;
     QSpacerItem *verticalSpacer_9;
     QLabel *P3_Vache;
     QSpacerItem *verticalSpacer_8;
-    QLabel *P3_Vache_Methane;
+    QLabel *P3_Vache_pollution;
     QSpacerItem *verticalSpacer_15;
     QSpacerItem *horizontalSpacer;
 
@@ -358,14 +360,27 @@ public:
 
         verticalLayout->addItem(verticalSpacer_7);
 
-        P3_Humain_CO2 = new QLabel(centralwidget);
-        P3_Humain_CO2->setObjectName(QStringLiteral("P3_Humain_CO2"));
-        sizePolicy5.setHeightForWidth(P3_Humain_CO2->sizePolicy().hasHeightForWidth());
-        P3_Humain_CO2->setSizePolicy(sizePolicy5);
-        P3_Humain_CO2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        P3_Humain_CO2->setIndent(20);
+        P3_Humain_pollution = new QLabel(centralwidget);
+        P3_Humain_pollution->setObjectName(QStringLiteral("P3_Humain_pollution"));
+        sizePolicy5.setHeightForWidth(P3_Humain_pollution->sizePolicy().hasHeightForWidth());
+        P3_Humain_pollution->setSizePolicy(sizePolicy5);
+        P3_Humain_pollution->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        P3_Humain_pollution->setIndent(20);
 
-        verticalLayout->addWidget(P3_Humain_CO2);
+        verticalLayout->addWidget(P3_Humain_pollution);
+
+        verticalSpacer_18 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        verticalLayout->addItem(verticalSpacer_18);
+
+        P3_Humain_nv_tech = new QLabel(centralwidget);
+        P3_Humain_nv_tech->setObjectName(QStringLiteral("P3_Humain_nv_tech"));
+        sizePolicy5.setHeightForWidth(P3_Humain_nv_tech->sizePolicy().hasHeightForWidth());
+        P3_Humain_nv_tech->setSizePolicy(sizePolicy5);
+        P3_Humain_nv_tech->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        P3_Humain_nv_tech->setIndent(20);
+
+        verticalLayout->addWidget(P3_Humain_nv_tech);
 
         verticalSpacer_9 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
@@ -383,14 +398,14 @@ public:
 
         verticalLayout->addItem(verticalSpacer_8);
 
-        P3_Vache_Methane = new QLabel(centralwidget);
-        P3_Vache_Methane->setObjectName(QStringLiteral("P3_Vache_Methane"));
-        sizePolicy5.setHeightForWidth(P3_Vache_Methane->sizePolicy().hasHeightForWidth());
-        P3_Vache_Methane->setSizePolicy(sizePolicy5);
-        P3_Vache_Methane->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        P3_Vache_Methane->setIndent(20);
+        P3_Vache_pollution = new QLabel(centralwidget);
+        P3_Vache_pollution->setObjectName(QStringLiteral("P3_Vache_pollution"));
+        sizePolicy5.setHeightForWidth(P3_Vache_pollution->sizePolicy().hasHeightForWidth());
+        P3_Vache_pollution->setSizePolicy(sizePolicy5);
+        P3_Vache_pollution->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        P3_Vache_pollution->setIndent(20);
 
-        verticalLayout->addWidget(P3_Vache_Methane);
+        verticalLayout->addWidget(P3_Vache_pollution);
 
         verticalSpacer_15 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -434,9 +449,10 @@ public:
         P3_Algue_O2->setText(QApplication::translate("fenetre2", "O2 : X %", Q_NULLPTR));
         P3_Faune->setText(QApplication::translate("fenetre2", "Faune : NB", Q_NULLPTR));
         P3_Humain->setText(QApplication::translate("fenetre2", "Humains : NB", Q_NULLPTR));
-        P3_Humain_CO2->setText(QApplication::translate("fenetre2", "CO2 : X %", Q_NULLPTR));
+        P3_Humain_pollution->setText(QApplication::translate("fenetre2", "Pollution : X %", Q_NULLPTR));
+        P3_Humain_nv_tech->setText(QApplication::translate("fenetre2", "Nv techologique : X %", Q_NULLPTR));
         P3_Vache->setText(QApplication::translate("fenetre2", "Vaches : NB", Q_NULLPTR));
-        P3_Vache_Methane->setText(QApplication::translate("fenetre2", "Methane :", Q_NULLPTR));
+        P3_Vache_pollution->setText(QApplication::translate("fenetre2", "Methane :", Q_NULLPTR));
     } // retranslateUi
 
 };
