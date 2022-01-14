@@ -16,8 +16,10 @@ class Ecosysteme
 protected:
     size_t santeEcosysteme;
 public:
-    Ecosysteme();
+    Ecosysteme(Terre* t);
     virtual void changerSante(Terre* terre)=0;
+
+    size_t getSante(){return santeEcosysteme;}
 };
 
 
@@ -27,7 +29,7 @@ class EcosystemeMarin: public Ecosysteme
 protected:
 
 public:
-    EcosystemeMarin();
+    EcosystemeMarin(Terre* t);
     void changerSante(Terre* terre);
 };
 
@@ -38,7 +40,7 @@ class EcosystemeTerrestre: public Ecosysteme
 protected:
 
 public:
-    EcosystemeTerrestre();
+    EcosystemeTerrestre(Terre* t);
     void changerSante(Terre* terre);
 };
 

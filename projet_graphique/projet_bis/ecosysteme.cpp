@@ -1,10 +1,13 @@
 #include "ecosysteme.h"
 #include "terre.h"
 
-Ecosysteme::Ecosysteme()
+Ecosysteme::Ecosysteme(Terre* t)
 {
-
+    t->ajoutEcosysteme(this);
 }
+
+EcosystemeTerrestre::EcosystemeTerrestre(Terre* t):Ecosysteme(t){}
+EcosystemeMarin::EcosystemeMarin(Terre* t):Ecosysteme(t){}
 
 //impactEcolo max = 20 (terre), à diviser par X pour être sur l'échelle
 

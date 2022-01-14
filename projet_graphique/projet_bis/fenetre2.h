@@ -29,6 +29,8 @@ private:
     Ui::fenetre2 *ui;
     QDesktopWidget dw;
     Terre *terre;
+    EcosystemeMarin* EcosystMarin;
+    EcosystemeTerrestre* EcosystTerrestre;
 
 };
 

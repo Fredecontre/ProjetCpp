@@ -1,18 +1,18 @@
 #include "etrevivant.h"
 #include "terre.h"
 
-size_t EtreVivant::nbEtresVivants = 100;
-size_t Faune::nbFaune = 50;
+size_t EtreVivant::nbEtresVivants = 0;
+size_t Faune::nbFaune = 0;
 
-size_t Humain::nbHumains = 25;
-size_t Humain::niveauTechnologique = 2;  //On est entre 1 et 5
+size_t Humain::nbHumains = 0;
+size_t Humain::niveauTechnologique = 0;  //On est entre 1 et 5
 
 
-size_t Flore::nbFlore = 50;
+size_t Flore::nbFlore = 0;
 
-size_t Vache::nbVaches = 25;
-size_t Conifere::nbConiferes = 25;
-size_t Algue::nbAlgues = 25;
+size_t Vache::nbVaches = 0;
+size_t Conifere::nbConiferes = 0;
+size_t Algue::nbAlgues = 0;
 
 
 
@@ -23,7 +23,7 @@ EtreVivant::EtreVivant(Terre* t):age(),id(nbEtresVivants++){
 
 void Humain::impactEcologique(){
 
-   pollution = niveauTechnologique*2;  //La technologie pollue beacoup -> d'où le *2
+   pollution = niveauTechnologique*2;
 
    impactEcolo =  - (pollution + consommationEau);
 }
@@ -51,7 +51,8 @@ std::ostream& operator<<(std::ostream& o,const Humain & e){
 
     o<< "Age: " + to_string(e.getAge())<<endl;
     o<< "Espérance de vie: " + to_string(e.getLongevite())<<endl;
-    o<< "Impact écologique: " + to_string(e.getImpactEcologique())<<endl;
+    o<< "Niveau technologique: " + to_string(e.getNiveauTechnologique())<<endl;
+     o<< "Consommation Eau: " +to_string(e.getConsommationEau()) <<endl;
 
     return o;
 
@@ -59,8 +60,7 @@ std::ostream& operator<<(std::ostream& o,const Humain & e){
 
 bool Humain::operator== (const Humain& e) const{
 
-    return(this->getAge() == e.getAge() && this->getLongevite() == e.getLongevite() && this->getImpactEcologique() ==
-           e.getImpactEcologique());
+    return(getAge() == e.getAge() && getLongevite() == e.getLongevite() && getConsommationEau() == e.getConsommationEau());
 
 }
 
@@ -69,7 +69,8 @@ std::ostream& operator<<(std::ostream& o,const Vache & v){
 
     o<< "Age: " + to_string(v.getAge())<<endl;
     o<< "Espérance de vie: " + to_string(v.getLongevite())<<endl;
-    o<< "Impact écologique: " + to_string(v.getImpactEcologique())<<endl;
+    o<< "Impact méthane: " + to_string(v.getMethane())<<endl;
+    o<< "Consommation Eau: " +to_string(v.getConsommationEau()) <<endl;
 
     return o;
 
@@ -77,25 +78,40 @@ std::ostream& operator<<(std::ostream& o,const Vache & v){
 
 bool Vache::operator== (const Vache& v) const{
 
-    return(this->getAge() == v.getAge() && this->getLongevite() == v.getLongevite() && this->getImpactEcologique() ==
-           v.getImpactEcologique());
+    return(getAge() == v.getAge() && getLongevite() == v.getLongevite() && getConsommationEau() == v.getConsommationEau());
 
 }
 
-/*std::ostream& operator<<(std::ostream& o,const Conifere & c){
+std::ostream& operator<<(std::ostream& o,const Conifere & c){
 
 
-    o<< "Age: " + to_string(v.getAge())<<endl;
-    o<< "Espérance de vie: " + to_string(v.getLongevite())<<endl;
-    o<< "Impact écologique: " + to_string(v.getImpactEcologique())<<endl;
+    o<< "Age: " + to_string(c.getAge())<<endl;
+    o<< "Espérance de vie: " + to_string(c.getLongevite())<<endl;
+    o<< "Impact écologique: " + to_string(c.getImpactEcologique())<<endl;
 
     return o;
 
 }
 
-bool Vache::operator== (const Vache& v) const{
+bool Conifere::operator== (const Conifere& c) const{
 
-    return(this->getAge() == v.getAge() && this->getLongevite() == v.getLongevite() && this->getImpactEcologique() ==
-           v.getImpactEcologique());
+    return(getAge() == c.getAge() && getLongevite() == c.getLongevite());
 
-}*/
+}
+
+std::ostream& operator<<(std::ostream& o,const Algue & c){
+
+
+    o<< "Age: " + to_string(c.getAge())<<endl;
+    o<< "Espérance de vie: " + to_string(c.getLongevite())<<endl;
+    o<< "Impact écologique: " + to_string(c.getImpactEcologique())<<endl;
+
+    return o;
+
+}
+
+bool Algue::operator== (const Algue& a) const{
+
+    return(getAge() == a.getAge() && getLongevite() == a.getLongevite());
+
+}

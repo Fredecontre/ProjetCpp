@@ -5,25 +5,29 @@ Terre::Terre():santeTerre(100), temps(0){
 }
 
 //Fonction générale pour gérer l'ensemble des attributs du jeu
-void Terre::gestionTemps(){
+void Terre::gestionTemps(EcosystemeMarin* EcosystMarin, EcosystemeTerrestre* EcosysTerrestre){
    santeTerre -=5;
 
     temps+=10;
 
 
+    int compt =0;
+    for(auto iter = getEtresVivants().begin() ; iter != getEtresVivants().end(); iter++){
+        (*iter)->augmenterAge();
+        cout<<to_string(++compt)<<endl;
+         (*iter)->impactEcologique(); //FAIT BUG LE PROGRAMME !!!!!!
 
-    for(size_t i =0 ; i < EtreVivant::getNbEtresVivants(); i++){
-        //santeTerre += EtresVivants[i]->getImpactEcologique();
+        /*Vérifier si l'être vivant a atteint l'âge moyen et le tuer (retirer de la liste des êtres
+          vivants de la terre) si c'est le cas*/
 
+        //FAIT BUG LE PROGRAMME !!!!!!
+        /*if((*iter)->getAge() >  (*iter)->getLongevite()){
+           eliminerEtreVivant(iter);
+
+        }*/
     }
 
-    //Bien penser à augmenter l'âge
-    //Si âge dépasse longevité, tuer
-}
 
-//Getteur de la santé de la terre
-std::size_t Terre::getSante(){
-    return santeTerre;
 }
 
 void Terre::calculSante(int santeMarin, int santeTerrestre){
