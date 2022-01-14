@@ -15,6 +15,13 @@ size_t Conifere::nbConiferes = 0;
 size_t Algue::nbAlgues = 0;
 
 
+float Algue::O2Algue = 0.0008;
+float Conifere::O2Conifere = 0.004;
+size_t Vache::empreinteMethane = 10;
+
+
+
+
 
 
 EtreVivant::EtreVivant(Terre* t):age(),id(nbEtresVivants++){ 
@@ -23,27 +30,27 @@ EtreVivant::EtreVivant(Terre* t):age(),id(nbEtresVivants++){
 
 void Humain::impactEcologique(){
 
-   pollution = niveauTechnologique*2;
+   //pollution = niveauTechnologique*2;
 
-   impactEcolo =  - (pollution + consommationEau);
+   impactEcolo =  - (niveauTechnologique*2 + consommationEau);
 }
 
 void Vache::impactEcologique(){
 
-   pollution = empreinteMethane;
+   //pollution = empreinteMethane;
 
-   impactEcolo = - (pollution  + consommationEau);
+   impactEcolo = - (empreinteMethane  + consommationEau);
 }
 
 void Conifere::impactEcologique(){
 
-   impactEcolo = 1000*O2;
+   impactEcolo = 1000*O2Conifere;
 }
 
 void Algue::impactEcologique(){
 
 
-   impactEcolo =10000*O2;
+   impactEcolo =10000*O2Algue;
 }
 
 std::ostream& operator<<(std::ostream& o,const Humain & e){
@@ -87,7 +94,7 @@ std::ostream& operator<<(std::ostream& o,const Conifere & c){
 
     o<< "Age: " + to_string(c.getAge())<<endl;
     o<< "Espérance de vie: " + to_string(c.getLongevite())<<endl;
-    o<< "Impact écologique: " + to_string(c.getImpactEcologique())<<endl;
+   // o<< "Impact écologique: " + to_string(c.getImpactEcologique())<<endl;
 
     return o;
 
@@ -104,7 +111,7 @@ std::ostream& operator<<(std::ostream& o,const Algue & c){
 
     o<< "Age: " + to_string(c.getAge())<<endl;
     o<< "Espérance de vie: " + to_string(c.getLongevite())<<endl;
-    o<< "Impact écologique: " + to_string(c.getImpactEcologique())<<endl;
+    //o<< "Impact écologique: " + to_string(c.getImpactEcologique())<<endl;
 
     return o;
 

@@ -33,7 +33,7 @@ public:
 
 
         static size_t getNbEtresVivants(){return nbEtresVivants;}
-        int getImpactEcologique() const{ return impactEcolo;}
+        int getImpactEcologique(){return impactEcolo;}
         size_t getAge() const{ return age;}
         size_t getID() const{ return id;}
         size_t getLongevite() const{ return longevite;}
@@ -52,13 +52,11 @@ public:
 class Faune: public EtreVivant
 {
 protected:
-
-      //Entre 1 et 10
+    size_t pollution;
+    int consommationEau;  //Entre 1 et 10
     static size_t nbFaune;
 
 public:
-    size_t pollution;
-    int consommationEau;
 
     Faune(size_t consommationEau, Terre* terre):EtreVivant(terre),consommationEau(consommationEau){Faune::nbFaune++;}
      static size_t getNbFaune(){return nbFaune;}
@@ -79,18 +77,17 @@ public:
 class Flore: public EtreVivant
 {
 protected:
-
+    //static float O2; //O2 qui produit cette flore
     static size_t nbFlore;
 
 
 public:
-    float O2; //O2 qui produit cette flore
-    Flore(Terre* terre, float O2):EtreVivant(terre),O2(O2){Flore::nbFlore++;}
+    Flore(Terre* terre):EtreVivant(terre){Flore::nbFlore++;}
     static size_t getNbFlore(){return nbFlore;}
 
-    void setO2(float O2){O2=O2;}
+    //void setO2(float O2){O2=O2;}
 
-    size_t getO2(){return O2;}
+   //static float getO2(){return O2;}
 
 
 };
@@ -136,20 +133,21 @@ public:
 class Vache: public Faune
 {
 protected:
-    size_t empreinteMethane;  //Entre 1 et 10
+    static size_t empreinteMethane;  //Entre 1 et 10
     static size_t nbVaches;
 
 public:
-    Vache(Terre* terre):Faune(10,terre),empreinteMethane(10){Vache::nbVaches++; setLongevite(20);}
+    Vache(Terre* terre):Faune(10,terre){Vache::nbVaches++; setLongevite(20);}
 
   void impactEcologique();
 
    static size_t getNbVaches(){return nbVaches;}
-   size_t getMethane() const {return empreinteMethane;}
+   //size_t getMethane() const {return empreinteMethane;}
 
    bool operator== (const Vache& v) const;
    friend std::ostream& operator<<(std::ostream& o,const Vache & v);
    void setEmpreinteMethane(size_t emp){empreinteMethane=emp;}
+   static size_t getMethane(){return empreinteMethane;}
 
 
 };
@@ -165,10 +163,11 @@ class Conifere: public Flore
 {
 protected:
      static size_t nbConiferes;
+     static float O2Conifere;
 
 
 public:
-     Conifere(Terre* terre):Flore(terre,0.004){Conifere::nbConiferes++; setLongevite(50);}
+     Conifere(Terre* terre):Flore(terre){Conifere::nbConiferes++; setLongevite(50);}
 
    void impactEcologique();
 
@@ -176,6 +175,7 @@ public:
 
     bool operator== (const Conifere& c) const;
     friend std::ostream& operator<<(std::ostream& o,const Conifere & c);
+    static float getO2(){return O2Conifere;}
 
 
 
@@ -192,17 +192,18 @@ class Algue: public Flore
 {
 protected:
      static size_t nbAlgues;
+     static float O2Algue;
 
 
 public:
-     Algue(Terre* terre):Flore(terre,0.0008){Algue::nbAlgues++; setLongevite(10);}
+     Algue(Terre* terre):Flore(terre){Algue::nbAlgues++; setLongevite(10);}
 
    void impactEcologique();
    static size_t getNbAlgues(){return nbAlgues;}
 
    bool operator== (const Algue& a) const;
    friend std::ostream& operator<<(std::ostream& o,const Algue & a);
-
+    static float getO2(){return O2Algue;}
 
 
 };

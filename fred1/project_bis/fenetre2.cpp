@@ -8,7 +8,7 @@ fenetre2::fenetre2(QWidget *parent) :
     ui(new Ui::fenetre2)
 {
     ui->setupUi(this);
-    setFixedSize(dw.width()*0.965,dw.height());
+    //setFixedSize(dw.width()*0.965,dw.height());
     terre = new Terre();
     Etres.push_back(new Humain());
     Etres.push_back(new Vache());
@@ -19,8 +19,8 @@ fenetre2::fenetre2(QWidget *parent) :
     //QPixmap pix(QCoreApplication::applicationDirPath() + "/image_flore.jpg");
     QPixmap pix("image_flore"); // pas de .jpg
     //ui->P3_Flore_Image->setPixmap(pix);
-    ui->P3_Flore_Image->setPixmap(pix.scaled(150,50,Qt::KeepAspectRatio));
-    ui->P3_Faune_Image->setPixmap(pix.scaled(150,50,Qt::KeepAspectRatio));
+    //ui->P3_Flore_Image->setPixmap(pix.scaled(150,50,Qt::KeepAspectRatio));
+    //ui->P3_Faune_Image->setPixmap(pix.scaled(150,50,Qt::KeepAspectRatio));
 
     ui->P3_Flore->setText("Flore : "+QString::number(EtreVivant::getNbEtresVivants()));
     ui->P3_Humain->setText("Humains : "+QString::number(Humain::getNbHumains()));
@@ -28,7 +28,7 @@ fenetre2::fenetre2(QWidget *parent) :
     ui->P3_Faune->setText("Faune : "+QString::number(Faune::getNbFaune()));
     ui->P3_Conifere->setText("Coniferes : "+QString::number(Conifere::getNbConiferes()));
     ui->P3_Algue->setText("Faune : "+QString::number(Algue::getNbAlgues()));
-    ui->P3_Vache_Methane->setText("Methane : "+QString::number(dynamic_cast<Vache*>(Etres[1])->getMethane()));
+    //ui->P3_Vache_Methane->setText("Methane : "+QString::number(dynamic_cast<Vache*>(Etres[1])->getMethane()));
 }
 
 void fenetre2::on_bouton_fenetre2_clicked()

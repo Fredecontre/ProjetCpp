@@ -63,8 +63,15 @@ fenetre2::fenetre2(QWidget *parent,int nbHumain, int nbVache, int nbConifere,int
       ui->P2_Temps->setText("Temps : "+QString::number(terre->getTemps()));
 
       //JE SAIS PAS TROP COMMENT SAVOIR QUI EST VACHE ETC APRES INSERTION A LA FIN !!!!!!
-      ui->P3_Vache_pollution->setText("Methane : "+QString::number(dynamic_cast<Vache*>((terre->getEtresVivants())[1])->getMethane()));
-      ui->P3_Conifere_O2->setText("O2 : "+QString::number(dynamic_cast<Conifere*>((terre->getEtresVivants())[nbHumains+nbVaches+1])->getO2()*1000.000));
+      //ui->P3_Vache_pollution->setText("Methane : "+QString::number(dynamic_cast<Vache*>((terre->getEtresVivants())[1])->getMethane()));
+     // ui->P3_Conifere_O2->setText("O2 : "+QString::number(dynamic_cast<Conifere*>((terre->getEtresVivants())[nbHumains+nbVaches+1])->getO2()*1000.000));
+      ui->P3_Vache_pollution->setText("Methane : "+QString::number(Vache::getMethane()));
+      ui->P3_Conifere_O2->setText("O2 : "+QString::number(Conifere::getO2()));
+      ui->P3_Algue_O2->setText("O2 : "+QString::number(Algue::getO2()));
+      ui->P3_Humain_nv_tech->setText("Niveau Technologique : "+QString::number(Humain::getNiveauTechnologique()));
+      ui->P1_Eco_Marin_Sante->setText("Santé Ecosystème Marin : "+QString::number(EcosystemeMarin::getSanteEcosysteme()));
+      ui->P1_Eco_Terre_Sante->setText("Santé Ecosystème Terrestre : "+QString::number(EcosystemeTerrestre::getSanteEcosysteme()));
+
 
 }
 

@@ -413,6 +413,7 @@ compiler_moc_header_clean:
 	-$(DEL_FILE) moc_fenetre1.cpp moc_fenetre2.cpp
 moc_fenetre1.cpp: ../projet_bis/fenetre2.h \
 		../projet_bis/terre.h \
+		../projet_bis/ecosysteme.h \
 		../projet_bis/etrevivant.h \
 		../projet_bis/fenetre1.h \
 		moc_predefs.h \
@@ -420,6 +421,7 @@ moc_fenetre1.cpp: ../projet_bis/fenetre2.h \
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/polytech/Documents/ProjetCpp/projet_graphique/projet_bis -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../projet_bis/fenetre1.h -o moc_fenetre1.cpp
 
 moc_fenetre2.cpp: ../projet_bis/terre.h \
+		../projet_bis/ecosysteme.h \
 		../projet_bis/etrevivant.h \
 		../projet_bis/fenetre2.h \
 		moc_predefs.h \
@@ -452,30 +454,38 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 main.o: ../projet_bis/main.cpp ../projet_bis/fenetre1.h \
 		../projet_bis/fenetre2.h \
 		../projet_bis/terre.h \
-		../projet_bis/etrevivant.h \
-		../projet_bis/ecosysteme.h
+		../projet_bis/ecosysteme.h \
+		../projet_bis/etrevivant.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../projet_bis/main.cpp
 
 fenetre1.o: ../projet_bis/fenetre1.cpp ../projet_bis/fenetre1.h \
 		../projet_bis/fenetre2.h \
 		../projet_bis/terre.h \
+		../projet_bis/ecosysteme.h \
 		../projet_bis/etrevivant.h \
 		ui_fenetre1.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o fenetre1.o ../projet_bis/fenetre1.cpp
 
 fenetre2.o: ../projet_bis/fenetre2.cpp ../projet_bis/fenetre2.h \
 		../projet_bis/terre.h \
+		../projet_bis/ecosysteme.h \
 		../projet_bis/etrevivant.h \
 		ui_fenetre2.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o fenetre2.o ../projet_bis/fenetre2.cpp
 
-terre.o: ../projet_bis/terre.cpp ../projet_bis/terre.h
+terre.o: ../projet_bis/terre.cpp ../projet_bis/terre.h \
+		../projet_bis/ecosysteme.h \
+		../projet_bis/etrevivant.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o terre.o ../projet_bis/terre.cpp
 
-ecosysteme.o: ../projet_bis/ecosysteme.cpp ../projet_bis/ecosysteme.h
+ecosysteme.o: ../projet_bis/ecosysteme.cpp ../projet_bis/ecosysteme.h \
+		../projet_bis/terre.h \
+		../projet_bis/etrevivant.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ecosysteme.o ../projet_bis/ecosysteme.cpp
 
-etrevivant.o: ../projet_bis/etrevivant.cpp ../projet_bis/etrevivant.h
+etrevivant.o: ../projet_bis/etrevivant.cpp ../projet_bis/etrevivant.h \
+		../projet_bis/terre.h \
+		../projet_bis/ecosysteme.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o etrevivant.o ../projet_bis/etrevivant.cpp
 
 moc_fenetre1.o: moc_fenetre1.cpp 
