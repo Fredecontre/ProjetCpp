@@ -54,7 +54,7 @@ public:
     EcosystemeTerrestre(Terre* t);
     void changerSante(Terre* terre);
     static size_t getSanteEcosysteme(){return santeEcosystemeTerre;}
-    void setSanteEcosystemeTerre(size_t sante);
+    static void setSanteEcosystemeTerre(size_t sante);
 };
 
 

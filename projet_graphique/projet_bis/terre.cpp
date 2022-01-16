@@ -20,19 +20,24 @@ void Terre::gestionTemps(EcosystemeMarin* EcosystMarin, EcosystemeTerrestre* Eco
         //(*iter)->augmenterAge();
         // (*iter)->impactEcologique(); //FAIT BUG LE PROGRAMME !!!!!!
 
-         if(typeid(*iter)==typeid(Humain*) && (*iter)->estVivant()){
+         //if(typeid(*iter)==typeid(Humain*) && (*iter)->estVivant()){
+         if((*iter)->getType()==0 && (*iter)->estVivant()){
         //if(dynamic_cast<Humain*>(*iter) && (*iter)->estVivant()){
             cout<<endl;
-            cout<<typeid(*iter).name()<<endl;
+            cout<<to_string(++compt)<<endl;
             //eliminerEtreVivant(iter);
 
          }
 
-         else if(typeid(*iter)==typeid(Vache*) && (*iter)->estVivant()){
+         else if((*iter)->getType()==1 && (*iter)->estVivant()){
             cout<<endl;
             cout<<to_string(++compt)<<endl;
          }
-         else if(typeid(*iter)==typeid(Conifere*) && (*iter)->estVivant()){
+         else if((*iter)->getType()==2 && (*iter)->estVivant()){
+            cout<<endl;
+            cout<<to_string(++compt)<<endl;
+         }
+         else if((*iter)->getType()==3 && (*iter)->estVivant()){
             cout<<endl;
             cout<<to_string(++compt)<<endl;
          }

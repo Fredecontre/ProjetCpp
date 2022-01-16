@@ -65,7 +65,7 @@ void EcosystemeTerrestre::changerSante(Terre* terre){
 
 
     //On remet à l'échelle santeConifere
-    setSanteEcosystemeTerre( santeVache + santeConifere/1000 - santeHumain) ;
+    setSanteEcosystemeTerre(santeVache + santeConifere/1000 - santeHumain) ;
 }
 
 void EcosystemeMarin::changerSante(Terre* terre){

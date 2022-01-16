@@ -22,10 +22,11 @@ protected:
         bool vivant;  //Indique si cet être est vivant (true) ou pas (false). Utile pour fonction gestionTemps de Terre
         int impactEcolo;
         static size_t nbEtresVivants;
+        size_t type; // 0 = humain, 1 = vache, 2 = conifère, 3 = algue
 
 public:
         EtreVivant();
-        EtreVivant(Terre* t);
+        EtreVivant(Terre* t, size_t type);
 
         virtual void impactEcologique()=0;
 
@@ -40,6 +41,7 @@ public:
         size_t getLongevite() const{ return longevite;}
         void setAge(size_t age){age=age;}
         void setLongevite(size_t longev){longevite=longev;}
+        size_t getType(){return type;}
 
         /*Augmente l'âge de l'être vivant à chaque tour de décisions. Appelée dans gestionTemps() de la terre*/
         void augmenterAge(){age+=10;}
@@ -62,7 +64,7 @@ protected:
 
 public:
 
-    Faune(size_t consommationEau, Terre* terre):EtreVivant(terre),consommationEau(consommationEau){Faune::nbFaune++;}
+    Faune(size_t consommationEau, Terre* terre, size_t type):EtreVivant(terre,type),consommationEau(consommationEau){Faune::nbFaune++;}
      static size_t getNbFaune(){return nbFaune;}
      size_t getConsommationEau() const{return consommationEau;}
 
@@ -86,7 +88,7 @@ protected:
 
 
 public:
-    Flore(Terre* terre):EtreVivant(terre){Flore::nbFlore++;}
+    Flore(Terre* terre, size_t type):EtreVivant(terre,type){Flore::nbFlore++;}
     static size_t getNbFlore(){return nbFlore;}
 
     //void setO2(float O2){O2=O2;}
