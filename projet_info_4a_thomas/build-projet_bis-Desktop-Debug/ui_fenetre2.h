@@ -14,12 +14,14 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -45,9 +47,14 @@ public:
     QSpacerItem *verticalSpacer_14;
     QProgressBar *progressBar;
     QSpacerItem *verticalSpacer_16;
-    QLabel *P2_Terre_Image;
+    QLabel *P2_Texte_Evev;
     QSpacerItem *verticalSpacer_27;
-    QLabel *P2_Texte;
+    QGroupBox *P2_GroupBox;
+    QVBoxLayout *verticalLayout_3;
+    QRadioButton *P2_button_choix1;
+    QRadioButton *P2_button_choix2;
+    QRadioButton *P2_button_choix3;
+    QRadioButton *P2_button_choix4;
     QSpacerItem *verticalSpacer_17;
     QHBoxLayout *horizontalLayout;
     QPushButton *bouton_fenetre2;
@@ -194,28 +201,45 @@ public:
 
         verticalLayout_2->addItem(verticalSpacer_16);
 
-        P2_Terre_Image = new QLabel(centralwidget);
-        P2_Terre_Image->setObjectName(QStringLiteral("P2_Terre_Image"));
-        sizePolicy2.setHeightForWidth(P2_Terre_Image->sizePolicy().hasHeightForWidth());
-        P2_Terre_Image->setSizePolicy(sizePolicy2);
-        P2_Terre_Image->setScaledContents(true);
-        P2_Terre_Image->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        P2_Texte_Evev = new QLabel(centralwidget);
+        P2_Texte_Evev->setObjectName(QStringLiteral("P2_Texte_Evev"));
+        sizePolicy2.setHeightForWidth(P2_Texte_Evev->sizePolicy().hasHeightForWidth());
+        P2_Texte_Evev->setSizePolicy(sizePolicy2);
+        P2_Texte_Evev->setScaledContents(true);
+        P2_Texte_Evev->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
-        verticalLayout_2->addWidget(P2_Terre_Image);
+        verticalLayout_2->addWidget(P2_Texte_Evev);
 
         verticalSpacer_27 = new QSpacerItem(0, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout_2->addItem(verticalSpacer_27);
 
-        P2_Texte = new QLabel(centralwidget);
-        P2_Texte->setObjectName(QStringLiteral("P2_Texte"));
-        QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
-        sizePolicy4.setHorizontalStretch(0);
-        sizePolicy4.setVerticalStretch(0);
-        sizePolicy4.setHeightForWidth(P2_Texte->sizePolicy().hasHeightForWidth());
-        P2_Texte->setSizePolicy(sizePolicy4);
+        P2_GroupBox = new QGroupBox(centralwidget);
+        P2_GroupBox->setObjectName(QStringLiteral("P2_GroupBox"));
+        verticalLayout_3 = new QVBoxLayout(P2_GroupBox);
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        P2_button_choix1 = new QRadioButton(P2_GroupBox);
+        P2_button_choix1->setObjectName(QStringLiteral("P2_button_choix1"));
 
-        verticalLayout_2->addWidget(P2_Texte);
+        verticalLayout_3->addWidget(P2_button_choix1);
+
+        P2_button_choix2 = new QRadioButton(P2_GroupBox);
+        P2_button_choix2->setObjectName(QStringLiteral("P2_button_choix2"));
+
+        verticalLayout_3->addWidget(P2_button_choix2);
+
+        P2_button_choix3 = new QRadioButton(P2_GroupBox);
+        P2_button_choix3->setObjectName(QStringLiteral("P2_button_choix3"));
+
+        verticalLayout_3->addWidget(P2_button_choix3);
+
+        P2_button_choix4 = new QRadioButton(P2_GroupBox);
+        P2_button_choix4->setObjectName(QStringLiteral("P2_button_choix4"));
+
+        verticalLayout_3->addWidget(P2_button_choix4);
+
+
+        verticalLayout_2->addWidget(P2_GroupBox);
 
         verticalSpacer_17 = new QSpacerItem(0, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
@@ -249,11 +273,11 @@ public:
 
         P3_Titre = new QLabel(centralwidget);
         P3_Titre->setObjectName(QStringLiteral("P3_Titre"));
-        QSizePolicy sizePolicy5(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy5.setHorizontalStretch(0);
-        sizePolicy5.setVerticalStretch(0);
-        sizePolicy5.setHeightForWidth(P3_Titre->sizePolicy().hasHeightForWidth());
-        P3_Titre->setSizePolicy(sizePolicy5);
+        QSizePolicy sizePolicy4(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(P3_Titre->sizePolicy().hasHeightForWidth());
+        P3_Titre->setSizePolicy(sizePolicy4);
         QFont font;
         font.setPointSize(12);
         P3_Titre->setFont(font);
@@ -267,11 +291,11 @@ public:
 
         P3_Flore = new QLabel(centralwidget);
         P3_Flore->setObjectName(QStringLiteral("P3_Flore"));
-        QSizePolicy sizePolicy6(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        sizePolicy6.setHorizontalStretch(0);
-        sizePolicy6.setVerticalStretch(0);
-        sizePolicy6.setHeightForWidth(P3_Flore->sizePolicy().hasHeightForWidth());
-        P3_Flore->setSizePolicy(sizePolicy6);
+        QSizePolicy sizePolicy5(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy5.setHorizontalStretch(0);
+        sizePolicy5.setVerticalStretch(0);
+        sizePolicy5.setHeightForWidth(P3_Flore->sizePolicy().hasHeightForWidth());
+        P3_Flore->setSizePolicy(sizePolicy5);
 
         verticalLayout->addWidget(P3_Flore);
 
@@ -285,8 +309,8 @@ public:
 
         P3_Conifere = new QLabel(centralwidget);
         P3_Conifere->setObjectName(QStringLiteral("P3_Conifere"));
-        sizePolicy5.setHeightForWidth(P3_Conifere->sizePolicy().hasHeightForWidth());
-        P3_Conifere->setSizePolicy(sizePolicy5);
+        sizePolicy4.setHeightForWidth(P3_Conifere->sizePolicy().hasHeightForWidth());
+        P3_Conifere->setSizePolicy(sizePolicy4);
         P3_Conifere->setIndent(10);
 
         verticalLayout->addWidget(P3_Conifere);
@@ -297,8 +321,8 @@ public:
 
         P3_Conifere_O2 = new QLabel(centralwidget);
         P3_Conifere_O2->setObjectName(QStringLiteral("P3_Conifere_O2"));
-        sizePolicy5.setHeightForWidth(P3_Conifere_O2->sizePolicy().hasHeightForWidth());
-        P3_Conifere_O2->setSizePolicy(sizePolicy5);
+        sizePolicy4.setHeightForWidth(P3_Conifere_O2->sizePolicy().hasHeightForWidth());
+        P3_Conifere_O2->setSizePolicy(sizePolicy4);
         P3_Conifere_O2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         P3_Conifere_O2->setIndent(20);
 
@@ -310,8 +334,8 @@ public:
 
         P3_Algue = new QLabel(centralwidget);
         P3_Algue->setObjectName(QStringLiteral("P3_Algue"));
-        sizePolicy5.setHeightForWidth(P3_Algue->sizePolicy().hasHeightForWidth());
-        P3_Algue->setSizePolicy(sizePolicy5);
+        sizePolicy4.setHeightForWidth(P3_Algue->sizePolicy().hasHeightForWidth());
+        P3_Algue->setSizePolicy(sizePolicy4);
         P3_Algue->setIndent(10);
 
         verticalLayout->addWidget(P3_Algue);
@@ -322,8 +346,8 @@ public:
 
         P3_Algue_O2 = new QLabel(centralwidget);
         P3_Algue_O2->setObjectName(QStringLiteral("P3_Algue_O2"));
-        sizePolicy5.setHeightForWidth(P3_Algue_O2->sizePolicy().hasHeightForWidth());
-        P3_Algue_O2->setSizePolicy(sizePolicy5);
+        sizePolicy4.setHeightForWidth(P3_Algue_O2->sizePolicy().hasHeightForWidth());
+        P3_Algue_O2->setSizePolicy(sizePolicy4);
         P3_Algue_O2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         P3_Algue_O2->setIndent(20);
 
@@ -335,8 +359,8 @@ public:
 
         P3_Faune = new QLabel(centralwidget);
         P3_Faune->setObjectName(QStringLiteral("P3_Faune"));
-        sizePolicy5.setHeightForWidth(P3_Faune->sizePolicy().hasHeightForWidth());
-        P3_Faune->setSizePolicy(sizePolicy5);
+        sizePolicy4.setHeightForWidth(P3_Faune->sizePolicy().hasHeightForWidth());
+        P3_Faune->setSizePolicy(sizePolicy4);
 
         verticalLayout->addWidget(P3_Faune);
 
@@ -350,8 +374,8 @@ public:
 
         P3_Humain = new QLabel(centralwidget);
         P3_Humain->setObjectName(QStringLiteral("P3_Humain"));
-        sizePolicy5.setHeightForWidth(P3_Humain->sizePolicy().hasHeightForWidth());
-        P3_Humain->setSizePolicy(sizePolicy5);
+        sizePolicy4.setHeightForWidth(P3_Humain->sizePolicy().hasHeightForWidth());
+        P3_Humain->setSizePolicy(sizePolicy4);
         P3_Humain->setIndent(10);
 
         verticalLayout->addWidget(P3_Humain);
@@ -362,8 +386,8 @@ public:
 
         P3_Humain_pollution = new QLabel(centralwidget);
         P3_Humain_pollution->setObjectName(QStringLiteral("P3_Humain_pollution"));
-        sizePolicy5.setHeightForWidth(P3_Humain_pollution->sizePolicy().hasHeightForWidth());
-        P3_Humain_pollution->setSizePolicy(sizePolicy5);
+        sizePolicy4.setHeightForWidth(P3_Humain_pollution->sizePolicy().hasHeightForWidth());
+        P3_Humain_pollution->setSizePolicy(sizePolicy4);
         P3_Humain_pollution->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         P3_Humain_pollution->setIndent(20);
 
@@ -375,8 +399,8 @@ public:
 
         P3_Humain_nv_tech = new QLabel(centralwidget);
         P3_Humain_nv_tech->setObjectName(QStringLiteral("P3_Humain_nv_tech"));
-        sizePolicy5.setHeightForWidth(P3_Humain_nv_tech->sizePolicy().hasHeightForWidth());
-        P3_Humain_nv_tech->setSizePolicy(sizePolicy5);
+        sizePolicy4.setHeightForWidth(P3_Humain_nv_tech->sizePolicy().hasHeightForWidth());
+        P3_Humain_nv_tech->setSizePolicy(sizePolicy4);
         P3_Humain_nv_tech->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         P3_Humain_nv_tech->setIndent(20);
 
@@ -388,8 +412,8 @@ public:
 
         P3_Vache = new QLabel(centralwidget);
         P3_Vache->setObjectName(QStringLiteral("P3_Vache"));
-        sizePolicy5.setHeightForWidth(P3_Vache->sizePolicy().hasHeightForWidth());
-        P3_Vache->setSizePolicy(sizePolicy5);
+        sizePolicy4.setHeightForWidth(P3_Vache->sizePolicy().hasHeightForWidth());
+        P3_Vache->setSizePolicy(sizePolicy4);
         P3_Vache->setIndent(10);
 
         verticalLayout->addWidget(P3_Vache);
@@ -400,8 +424,8 @@ public:
 
         P3_Vache_pollution = new QLabel(centralwidget);
         P3_Vache_pollution->setObjectName(QStringLiteral("P3_Vache_pollution"));
-        sizePolicy5.setHeightForWidth(P3_Vache_pollution->sizePolicy().hasHeightForWidth());
-        P3_Vache_pollution->setSizePolicy(sizePolicy5);
+        sizePolicy4.setHeightForWidth(P3_Vache_pollution->sizePolicy().hasHeightForWidth());
+        P3_Vache_pollution->setSizePolicy(sizePolicy4);
         P3_Vache_pollution->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         P3_Vache_pollution->setIndent(20);
 
@@ -437,8 +461,12 @@ public:
         P1_Eco_Terre_Image->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
         P2_Terre->setText(QApplication::translate("fenetre2", "Terre", Q_NULLPTR));
         P2_Temps->setText(QApplication::translate("fenetre2", "<html><head/><body><p>Temps : NB</p></body></html>", Q_NULLPTR));
-        P2_Terre_Image->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
-        P2_Texte->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
+        P2_Texte_Evev->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
+        P2_GroupBox->setTitle(QApplication::translate("fenetre2", "Faites le bon choix !", Q_NULLPTR));
+        P2_button_choix1->setText(QApplication::translate("fenetre2", "RadioButton", Q_NULLPTR));
+        P2_button_choix2->setText(QApplication::translate("fenetre2", "RadioButton", Q_NULLPTR));
+        P2_button_choix3->setText(QApplication::translate("fenetre2", "RadioButton", Q_NULLPTR));
+        P2_button_choix4->setText(QApplication::translate("fenetre2", "RadioButton", Q_NULLPTR));
         bouton_fenetre2->setText(QApplication::translate("fenetre2", "retour menu", Q_NULLPTR));
         bouton_action->setText(QApplication::translate("fenetre2", "passer temps", Q_NULLPTR));
         P3_Titre->setText(QApplication::translate("fenetre2", "Informations", Q_NULLPTR));

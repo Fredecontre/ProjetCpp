@@ -13,18 +13,18 @@
 
 TEST_CASE("Test humains")
 {
-  Terre* terre = new(Terre);
-  EcosystemeTerrestre* EcoTerrestre = new EcosystemeTerrestre(terre);
-  EcosystemeMarin* EcoMarin = new EcosystemeMarin(terre);
+  Terre terre;
+  EcosystemeTerrestre EcoTerrestre(&terre);
+  EcosystemeMarin EcoMarin(&terre);
 
-  Humain hum1(terre);
-  Humain hum2(terre);
+  Humain hum1(&terre);
+  Humain hum2(&terre);
 
   
   
   REQUIRE(hum1==hum2);
 
-  terre->gestionTemps(EcoMarin,EcoTerrestre);
+  terre.gestionTemps(&EcoMarin,&EcoTerrestre);
 
   cout<<hum2;
 
@@ -34,22 +34,27 @@ TEST_CASE("Test humains")
 
 TEST_CASE("Test vaches")
 {
-  Terre* terre = new(Terre);
-  EcosystemeTerrestre* EcoTerrestre = new EcosystemeTerrestre(terre);
-  EcosystemeMarin* EcoMarin = new EcosystemeMarin(terre);
+  Terre terre;
+  EcosystemeTerrestre EcoTerrestre(&terre);
+  EcosystemeMarin EcoMarin(&terre);
 
-  Vache vache1(terre);
-  Vache vache2(terre);
+  Vache vache1(&terre);
+  Vache vache2(&terre);
+  Conifere conif(&terre);
 
   
   
   REQUIRE(vache1==vache2);
 
-  terre->gestionTemps(EcoMarin,EcoTerrestre);
+  terre.gestionTemps(&EcoMarin,&EcoTerrestre);
+  //terre.gestionTemps(&EcoMarin,&EcoTerrestre);
+
+  cout<<to_string(EcoMarin.getSanteEcosysteme())<<endl;;
 
   cout<<vache2;
+  
 
-  //REQUIRE(vache2.getAge()==10);
+  REQUIRE(vache2.getAge()==10);
   
 }
 

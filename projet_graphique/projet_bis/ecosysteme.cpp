@@ -1,17 +1,24 @@
 #include "ecosysteme.h"
 #include "terre.h"
 #include "etrevivant.h"
+#include <typeinfo>
 
 size_t EcosystemeMarin::santeEcosystemeMarin = 0;
 size_t EcosystemeTerrestre::santeEcosystemeTerre =0;
+//int EcosystemeTerrestre::santeEcosysteme(0);
 
 Ecosysteme::Ecosysteme(Terre* t)
 {
-    t->ajoutEcosysteme(this);
+    //t->ajoutEcosysteme(this);
 }
 
-EcosystemeTerrestre::EcosystemeTerrestre(Terre* t):Ecosysteme(t){}
-EcosystemeMarin::EcosystemeMarin(Terre* t):Ecosysteme(t){}
+
+EcosystemeMarin::EcosystemeMarin(Terre* t):Ecosysteme(t){//EcosystemeMarin* ecoMarin = new EcosystemeMarin(t);
+
+                                                         t->ajoutEcosysteme(this);}
+EcosystemeTerrestre::EcosystemeTerrestre(Terre* t):Ecosysteme(t){
+    //EcosystemeTerrestre* ecoTerre = new EcosystemeTerrestre(t);
+                                                                 t->ajoutEcosysteme(this);}
 
 //impactEcolo max = 20 (terre), à diviser par X pour être sur l'échelle
 
@@ -19,29 +26,47 @@ EcosystemeMarin::EcosystemeMarin(Terre* t):Ecosysteme(t){}
 
 //1000 vaches max/200 (à mettre coeff 0.5 pour impact
 
-/*void EcosystemeTerrestre::changerSante(Terre* terre){
+void EcosystemeTerrestre::changerSante(Terre* terre){
 
 
-    int santeFaune;
+    int santeHumain;
+    int santeVache;
     int santeConifere;
 
 
-    for(size_t i =0 ; i < EtreVivant::getNbEtresVivants(); i++){
-
-        //On ne traite ici que l'impact sur l'écologie de l'ecosystème marin des algues et des humains
-
-        if(dynamic_cast<Conifere*>((terre->getEtresVivants())[i]))
-            santeConifere +=terre->getEtresVivants()[i]->getImpactEcologique();
-
-        else if(dynamic_cast<Faune*>((terre->getEtresVivants())[i]))
-            santeFaune += terre->getEtresVivants()[i]->getImpactEcologique();
+    //On traite ici que l'impact sur l'écologie de l'ecosystème terrestre des humains, vaches, et conifères
+    for(auto iter = terre->getEtresVivants().begin() ; iter != terre->getEtresVivants().end(); iter++){
 
 
+        if(typeid(*iter)==typeid(Humain*)){
+            santeHumain = dynamic_cast<Humain*>(*iter)->getImpactEcologique() * Humain::getNbHumains();
+            break;
+        }
     }
 
+    for(auto iter = terre->getEtresVivants().begin() ; iter != terre->getEtresVivants().end(); iter++){
+
+
+        if(typeid(*iter)==typeid(Vache*)){
+            santeVache = dynamic_cast<Vache*>(*iter)->getImpactEcologique() * Vache::getNbVaches();
+            break;
+        }
+    }
+
+    for(auto iter = terre->getEtresVivants().begin() ; iter != terre->getEtresVivants().end(); iter++){
+
+
+        if(typeid(*iter)==typeid(Conifere*)){
+            santeConifere = dynamic_cast<Conifere*>(*iter)->getImpactEcologique() * Conifere::getNbConiferes();
+            break;
+        }
+    }
+
+
+
     //On remet à l'échelle santeConifere
-    setSanteEcosysteme(santeFaune + santeConifere/1000) ;
-}*/
+    setSanteEcosystemeTerre( santeVache + santeConifere/1000 - santeHumain) ;
+}
 
 void EcosystemeMarin::changerSante(Terre* terre){
 
@@ -49,32 +74,58 @@ void EcosystemeMarin::changerSante(Terre* terre){
     int santeHumain;
     int santeAlgue;
 
-    //penser à rajouter les ecosystèmes dans le vector de Terre
+
+    /*
+
+    for(auto iter = terre->getEtresVivants().begin() ; iter != terre->getEtresVivants().end(); iter++){
 
 
+        if(typeid(*iter)==typeid(Conifere*)){
+            santeConifere = dynamic_cast<Conifere*>(*iter)->getImpactEcologique() * Conifere::getNbConiferes();
+            break;
+        }
+    }
 
     for(size_t i =0 ; i < EtreVivant::getNbEtresVivants(); i++){
         //On traite ici que l'impact sur l'écologie de l'ecosystème marin des algues et des humains
 
         if(dynamic_cast<Algue*>((terre->getEtresVivants())[i])){
-            santeAlgue = dynamic_cast<Algue*>((terre->getEtresVivants())[i])->getImpactEcologique() * Algue::getNbAlgues();
+            santeAlgue = dynamic_cast<Algue*>((terre->getEtresVivants())[i])->getO2() * Algue::getNbAlgues()/100000;
             break;
         }
     }
     for(size_t i =0 ; i < EtreVivant::getNbEtresVivants(); i++){
         if(dynamic_cast<Humain*>((terre->getEtresVivants())[i])){
-            santeHumain=dynamic_cast<Humain*>((terre->getEtresVivants())[i])->getImpactEcologique() * Humain::getNbHumains();
-            //santeHumain += terre->getEtresVivants()[i]->getImpactEcologique();
+            //REVOIR VALEUR DIVISER PAR 20000
+            santeHumain=-1*(dynamic_cast<Humain*>((terre->getEtresVivants())[i])->getConsommationEau() +
+                         dynamic_cast<Humain*>((terre->getEtresVivants())[i])->getNiveauTechnologique()) * Humain::getNbHumains()/20000;
+            break;
+        }
+    }*/
+
+    for(auto iter = terre->getEtresVivants().begin() ; iter != terre->getEtresVivants().end(); iter++){
+
+
+        if(typeid(*iter)==typeid(Humain*)){
+            santeHumain = dynamic_cast<Humain*>(*iter)->getImpactEcologique() * Humain::getNbHumains();
             break;
         }
     }
 
+    for(auto iter = terre->getEtresVivants().begin() ; iter != terre->getEtresVivants().end(); iter++){
 
+
+        if(typeid(*iter)==typeid(Algue*)){
+            santeAlgue = dynamic_cast<Algue*>(*iter)->getImpactEcologique() * Algue::getNbAlgues();
+            break;
+        }
+    }
     //On remet à l'échelle santeAlgue
-     setSanteEcosysteme(santeHumain + santeAlgue/10000);
+     setSanteEcosystemeMarin(santeAlgue/10000 - santeHumain);
+    //setSanteEcosystemeMarin(santeHumain + santeAlgue);
 }
 
-void EcosystemeTerrestre::setSanteEcosysteme(size_t sante){santeEcosystemeTerre=sante;}
+void EcosystemeTerrestre::setSanteEcosystemeTerre(size_t sante){santeEcosystemeTerre=sante;}
 
-void EcosystemeMarin::setSanteEcosysteme(size_t sante){santeEcosystemeMarin=sante;}
+void EcosystemeMarin::setSanteEcosystemeMarin(size_t sante){santeEcosystemeMarin=sante;}
 

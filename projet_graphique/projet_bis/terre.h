@@ -23,6 +23,12 @@ class Terre{
     //void gestionSante(int O2, int CO2);
     vector<EtreVivant*> getEtresVivants(){return EtresVivants;}
     void eliminerEtreVivant(vector<EtreVivant*>::iterator indice){EtresVivants.erase(indice);}
+    void viellissementEtresVivants(){
+        for(auto iter = getEtresVivants().begin() ; iter != getEtresVivants().end(); iter++){
+            (*iter)->augmenterAge();
+        }
+
+    }
 
 
     private:

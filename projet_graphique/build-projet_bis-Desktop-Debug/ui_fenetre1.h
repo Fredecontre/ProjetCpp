@@ -200,7 +200,7 @@ public:
     void retranslateUi(QMainWindow *fenetre1)
     {
         fenetre1->setWindowTitle(QApplication::translate("fenetre1", "MainWindow", Q_NULLPTR));
-        Titre_page->setText(QApplication::translate("fenetre1", "Hands on earth", Q_NULLPTR));
+        Titre_page->setText(QApplication::translate("fenetre1", "Hands on Earth", Q_NULLPTR));
         description_jeu->setText(QApplication::translate("fenetre1", "Description jeu : \n"
 "blablabla \n"
 " blablablaaaaaaaaaaaaa\n"
@@ -223,19 +223,19 @@ public:
 " blablablaaaaaaaaaaaaa\n"
 " blablablaaaaaaaaaaaaa\n"
 " blablablaaaaaaaaaaaaa", Q_NULLPTR));
-        groupBoxHumain->setTitle(QApplication::translate("fenetre1", "Nombres  humains", Q_NULLPTR));
+        groupBoxHumain->setTitle(QApplication::translate("fenetre1", "Nombre Humains", Q_NULLPTR));
         button_humain_choix1->setText(QApplication::translate("fenetre1", "100", Q_NULLPTR));
         button_humain_choix2->setText(QApplication::translate("fenetre1", "1000", Q_NULLPTR));
         button_humain_choix3->setText(QApplication::translate("fenetre1", "2000", Q_NULLPTR));
-        groupBoxVache->setTitle(QApplication::translate("fenetre1", "Nombres Vaches", Q_NULLPTR));
+        groupBoxVache->setTitle(QApplication::translate("fenetre1", "Nombre Vaches", Q_NULLPTR));
         button_vache_choix1->setText(QApplication::translate("fenetre1", "10", Q_NULLPTR));
         button_vache_choix2->setText(QApplication::translate("fenetre1", "100", Q_NULLPTR));
         button_vache_choix3->setText(QApplication::translate("fenetre1", "200", Q_NULLPTR));
-        groupBox_Conifere->setTitle(QApplication::translate("fenetre1", "Nombres Conif\303\250res", Q_NULLPTR));
+        groupBox_Conifere->setTitle(QApplication::translate("fenetre1", "Nombre Conif\303\250res", Q_NULLPTR));
         button_conifere_choix1->setText(QApplication::translate("fenetre1", "8000", Q_NULLPTR));
         button_conifere_choix2->setText(QApplication::translate("fenetre1", "10000", Q_NULLPTR));
         button_conifere_choix3->setText(QApplication::translate("fenetre1", "20000", Q_NULLPTR));
-        groupBox_Algue->setTitle(QApplication::translate("fenetre1", "Nombres algues", Q_NULLPTR));
+        groupBox_Algue->setTitle(QApplication::translate("fenetre1", "Nombre Algues", Q_NULLPTR));
         button_algue_choix1->setText(QApplication::translate("fenetre1", "40000", Q_NULLPTR));
         button_algue_choix2->setText(QApplication::translate("fenetre1", "80000", Q_NULLPTR));
         button_algue_choix3->setText(QApplication::translate("fenetre1", "100000", Q_NULLPTR));

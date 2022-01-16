@@ -7,21 +7,25 @@
 
 
 class Terre;
+class EcosystemeMarin;
+class EcosystemeTerrestre;
 
 using namespace std;
 
 
 class Ecosysteme
 {
+    //friend class EcosystemeMarin;
+    //friend class EcosystemeTerrestre;
 protected:
-   //static size_t santeEcosysteme;
+  // static int santeEcosysteme;
 public:
     Ecosysteme(Terre* t);
     virtual void changerSante(Terre* terre)=0;
 
     //size_t getSante(){return santeEcosysteme;}
-  //  static size_t getSanteEcosysteme(){return santeEcosysteme;}
-    //void setSanteEcosysteme(size_t sante){this->santeEcosysteme=sante;}
+   //static size_t getSanteEcosysteme(){return santeEcosysteme;}
+   //static int setSanteEcosysteme(int sante){santeEcosysteme=sante; return sante;}
 };
 
 
@@ -34,7 +38,9 @@ public:
     EcosystemeMarin(Terre* t);
     void changerSante(Terre* terre);
     static size_t getSanteEcosysteme(){return santeEcosystemeMarin;}
-    void setSanteEcosysteme(size_t sante);
+    static void setSanteEcosystemeMarin(size_t sante);
+
+
 
 };
 
@@ -48,7 +54,7 @@ public:
     EcosystemeTerrestre(Terre* t);
     void changerSante(Terre* terre);
     static size_t getSanteEcosysteme(){return santeEcosystemeTerre;}
-    static void setSanteEcosysteme(size_t sante);
+    void setSanteEcosystemeTerre(size_t sante);
 };
 
 

@@ -19,6 +19,7 @@ protected:
         size_t age;
         size_t id;
         size_t longevite;
+        bool vivant;  //Indique si cet être est vivant (true) ou pas (false). Utile pour fonction gestionTemps de Terre
         int impactEcolo;
         static size_t nbEtresVivants;
 
@@ -41,7 +42,10 @@ public:
         void setLongevite(size_t longev){longevite=longev;}
 
         /*Augmente l'âge de l'être vivant à chaque tour de décisions. Appelée dans gestionTemps() de la terre*/
-        size_t augmenterAge(){age+=10; return age;}
+        void augmenterAge(){age+=10;}
+        void kill(){vivant=false;}  //Tuer cet être vivant en mettant son attribut vivant à false
+        bool estVivant(){return vivant;}
+        static void decrementerNbEtresVivants(){nbEtresVivants--;}
 
 };
 
@@ -108,7 +112,7 @@ protected:
 public:
 
 
-    Humain(Terre* terre):Faune(6,terre){ Humain::nbHumains++; setLongevite(80);}
+    Humain(Terre* terre);
 
     bool operator== (const Humain& e) const;
 
@@ -118,6 +122,7 @@ public:
    static size_t getNiveauTechnologique(){return niveauTechnologique;}
    friend std::ostream&  operator<<(std::ostream& o,const Humain & e);
    void setNiveauTechnologique(size_t niv){niveauTechnologique=niv;}
+   static void decrementerHumains(){nbHumains--;}
 
 
 
@@ -137,7 +142,7 @@ protected:
     static size_t nbVaches;
 
 public:
-    Vache(Terre* terre):Faune(10,terre){Vache::nbVaches++; setLongevite(20);}
+    Vache(Terre* terre);
 
   void impactEcologique();
 
@@ -148,6 +153,7 @@ public:
    friend std::ostream& operator<<(std::ostream& o,const Vache & v);
    void setEmpreinteMethane(size_t emp){empreinteMethane=emp;}
    static size_t getMethane(){return empreinteMethane;}
+   static void decrementerVaches(){nbVaches--;}
 
 
 };
@@ -167,7 +173,7 @@ protected:
 
 
 public:
-     Conifere(Terre* terre):Flore(terre){Conifere::nbConiferes++; setLongevite(50);}
+     Conifere(Terre* terre);
 
    void impactEcologique();
 
@@ -176,6 +182,8 @@ public:
     bool operator== (const Conifere& c) const;
     friend std::ostream& operator<<(std::ostream& o,const Conifere & c);
     static float getO2(){return O2Conifere;}
+    static void decrementerConiferes(){nbConiferes--;}
+
 
 
 
@@ -196,15 +204,15 @@ protected:
 
 
 public:
-     Algue(Terre* terre):Flore(terre){Algue::nbAlgues++; setLongevite(10);}
+     Algue(Terre* terre);
 
    void impactEcologique();
    static size_t getNbAlgues(){return nbAlgues;}
 
    bool operator== (const Algue& a) const;
    friend std::ostream& operator<<(std::ostream& o,const Algue & a);
-    static float getO2(){return O2Algue;}
-
+   static float getO2(){return O2Algue;}
+   static void decrementerAlgues(){nbAlgues--;}
 
 };
 

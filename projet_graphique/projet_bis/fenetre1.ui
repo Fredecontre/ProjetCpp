@@ -25,7 +25,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Hands on earth</string>
+         <string>Hands on Earth</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignHCenter|Qt::AlignTop</set>
@@ -86,7 +86,7 @@ blablabla
       <item>
        <widget class="QGroupBox" name="groupBoxHumain">
         <property name="title">
-         <string>Nombres  humains</string>
+         <string>Nombre Humains</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
@@ -116,7 +116,7 @@ blablabla
       <item>
        <widget class="QGroupBox" name="groupBoxVache">
         <property name="title">
-         <string>Nombres Vaches</string>
+         <string>Nombre Vaches</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
@@ -146,7 +146,7 @@ blablabla
       <item>
        <widget class="QGroupBox" name="groupBox_Conifere">
         <property name="title">
-         <string>Nombres Conifères</string>
+         <string>Nombre Conifères</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
@@ -176,7 +176,7 @@ blablabla
       <item>
        <widget class="QGroupBox" name="groupBox_Algue">
         <property name="title">
-         <string>Nombres algues</string>
+         <string>Nombre Algues</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>

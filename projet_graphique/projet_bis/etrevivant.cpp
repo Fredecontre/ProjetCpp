@@ -23,10 +23,27 @@ size_t Vache::empreinteMethane = 10;
 
 
 
-
-EtreVivant::EtreVivant(Terre* t):age(),id(nbEtresVivants++){ 
-   t->ajoutEtreVivant(this);
+/*Constructeurs*/
+EtreVivant::EtreVivant(Terre* t):age(0),id(nbEtresVivants++),vivant(true){
+   //t->ajoutEtreVivant(Etre);
 }
+
+Vache::Vache(Terre* terre):Faune(10,terre){ Vache::nbVaches++; setLongevite(20);
+                                           //Vache* vache = new Vache(terre);
+                                           terre->ajoutEtreVivant(this);}
+
+
+Humain::Humain(Terre* terre):Faune(6,terre){ Humain::nbHumains++; setLongevite(80);
+                                           //Humain* hum = new Humain(terre);
+                                           terre->ajoutEtreVivant(this);}
+
+Conifere::Conifere(Terre* terre):Flore(terre){ Conifere::nbConiferes++; setLongevite(50);
+                                           //Conifere* conifere = new Conifere(terre);
+                                           terre->ajoutEtreVivant(this);}
+
+Algue::Algue(Terre* terre):Flore(terre){ Algue::nbAlgues++; setLongevite(10);
+                                          // Algue* algue = new Algue(terre);
+                                           terre->ajoutEtreVivant(this);}
 
 void Humain::impactEcologique(){
 
