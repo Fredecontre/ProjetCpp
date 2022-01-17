@@ -1,13 +1,15 @@
 #ifndef ETREVIVANT_H
 #define ETREVIVANT_H
 
+#pragma once
+#include <iostream>
+
 
 //Contient toutes les déclarations des classes des différents types d'êtres vivants
 
-#pragma once
 
 class Terre;
-#include <iostream>
+
 
 
 
@@ -16,7 +18,7 @@ using namespace std;
 class EtreVivant
 {
 protected:
-        size_t age;
+        int age;
         size_t id;
         size_t longevite;
         bool vivant;  //Indique si cet être est vivant (true) ou pas (false). Utile pour fonction gestionTemps de Terre
@@ -25,7 +27,6 @@ protected:
         size_t type; // 0 = humain, 1 = vache, 2 = conifère, 3 = algue
 
 public:
-        EtreVivant();
         EtreVivant(Terre* t, size_t type);
 
         virtual void impactEcologique()=0;
@@ -83,17 +84,17 @@ public:
 class Flore: public EtreVivant
 {
 protected:
-    //static float O2; //O2 qui produit cette flore
+    float O2; //O2 qui produit cette flore
     static size_t nbFlore;
 
 
 public:
-    Flore(Terre* terre, size_t type):EtreVivant(terre,type){Flore::nbFlore++;}
+    Flore(Terre* terre, size_t type, float O2):EtreVivant(terre,type),O2(O2){Flore::nbFlore++;}
     static size_t getNbFlore(){return nbFlore;}
 
-    //void setO2(float O2){O2=O2;}
+    void setO2(float O2){O2=O2;}
 
-   //static float getO2(){return O2;}
+    float getO2(){return O2;}
 
 
 };
@@ -171,7 +172,7 @@ class Conifere: public Flore
 {
 protected:
      static size_t nbConiferes;
-     static float O2Conifere;
+    // static float O2Conifere;
 
 
 public:
@@ -183,8 +184,8 @@ public:
 
     bool operator== (const Conifere& c) const;
     friend std::ostream& operator<<(std::ostream& o,const Conifere & c);
-    static float getO2(){return O2Conifere;}
-    static void decrementerConiferes(){nbConiferes--;}
+   // static float getO2(){return O2Conifere;}
+    static void decrementerConiferes(){nbConiferes-=1000;}
 
 
 
@@ -213,8 +214,8 @@ public:
 
    bool operator== (const Algue& a) const;
    friend std::ostream& operator<<(std::ostream& o,const Algue & a);
-   static float getO2(){return O2Algue;}
-   static void decrementerAlgues(){nbAlgues--;}
+   //static float getO2(){return O2Algue;}
+   static void decrementerAlgues(){nbAlgues-=10000;}
 
 };
 

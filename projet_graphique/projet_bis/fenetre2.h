@@ -28,9 +28,15 @@ private slots:
 private:
     Ui::fenetre2 *ui;
     QDesktopWidget dw;
-    Terre terre;
+    Terre* terre;
     EcosystemeMarin *EcosystMarin;
     EcosystemeTerrestre *EcosystTerrestre;
+
+    //Un exemplaire de chaque être vivant pour l'affichage
+    Vache* vache;
+    Humain* hum;
+    Conifere* conifere;
+    Algue* algue;
 
 };
 

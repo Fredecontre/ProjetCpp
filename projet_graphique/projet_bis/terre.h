@@ -16,7 +16,7 @@ class Terre{
 
     size_t getSante(){return santeTerre;}
     size_t getTemps(){ return temps;}
-    void calculSante(int santeMarin, int santeTerrestre);
+    void calculSante();
     void gestionTemps(EcosystemeMarin* EcosystMarin, EcosystemeTerrestre* EcosysTerrestre);
     void ajoutEtreVivant(EtreVivant* etre){EtresVivants.push_back(etre);}
     void ajoutEcosysteme(Ecosysteme* eco){Ecosystemes.push_back(eco);}
@@ -39,10 +39,6 @@ class Terre{
     vector<EtreVivant*> EtresVivants;
 
     size_t temps;
-
-
-
-
 
 };
 
