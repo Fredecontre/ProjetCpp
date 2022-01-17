@@ -19,13 +19,19 @@
      <layout class="QVBoxLayout" name="verticalLayout_6">
       <item>
        <widget class="QLabel" name="Titre_page">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="font">
          <font>
           <pointsize>50</pointsize>
          </font>
         </property>
         <property name="text">
-         <string>Hands on earth</string>
+         <string>Hands on Earth</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignHCenter|Qt::AlignTop</set>
@@ -33,35 +39,78 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="description_jeu">
+       <spacer name="verticalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::MinimumExpanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>50</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="Image_Presentation">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
-         <string>Description jeu : 
-blablabla 
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa
- blablablaaaaaaaaaaaaa</string>
+         <string>TextLabel</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::MinimumExpanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>50</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="description_jeu">
+        <property name="text">
+         <string>Description jeu : </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::MinimumExpanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>50</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
       <item>
        <spacer name="horizontalSpacer">
@@ -86,7 +135,7 @@ blablabla
       <item>
        <widget class="QGroupBox" name="groupBoxHumain">
         <property name="title">
-         <string>Nombres  humains</string>
+         <string>Nombre  Humains</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
@@ -116,7 +165,7 @@ blablabla
       <item>
        <widget class="QGroupBox" name="groupBoxVache">
         <property name="title">
-         <string>Nombres Vaches</string>
+         <string>Nombre Vaches</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
@@ -146,7 +195,7 @@ blablabla
       <item>
        <widget class="QGroupBox" name="groupBox_Conifere">
         <property name="title">
-         <string>Nombres Conifères</string>
+         <string>Nombre Conifères</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
@@ -176,7 +225,7 @@ blablabla
       <item>
        <widget class="QGroupBox" name="groupBox_Algue">
         <property name="title">
-         <string>Nombres algues</string>
+         <string>Nombre Algues</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
