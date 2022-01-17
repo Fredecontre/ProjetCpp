@@ -49,6 +49,8 @@ public:
     QSpacerItem *verticalSpacer_16;
     QLabel *P2_Texte_Evev;
     QSpacerItem *verticalSpacer_27;
+    QLabel *P2_Image;
+    QSpacerItem *verticalSpacer_28;
     QGroupBox *P2_GroupBox;
     QVBoxLayout *verticalLayout_3;
     QRadioButton *P2_button_choix1;
@@ -86,6 +88,8 @@ public:
     QLabel *P3_Vache;
     QSpacerItem *verticalSpacer_8;
     QLabel *P3_Vache_pollution;
+    QSpacerItem *verticalSpacer_20;
+    QLabel *P3_Image_Vache;
     QSpacerItem *verticalSpacer_15;
     QSpacerItem *horizontalSpacer;
 
@@ -184,6 +188,11 @@ public:
 
         P2_Temps = new QLabel(centralwidget);
         P2_Temps->setObjectName(QStringLiteral("P2_Temps"));
+        QSizePolicy sizePolicy4(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(P2_Temps->sizePolicy().hasHeightForWidth());
+        P2_Temps->setSizePolicy(sizePolicy4);
 
         verticalLayout_2->addWidget(P2_Temps);
 
@@ -203,8 +212,11 @@ public:
 
         P2_Texte_Evev = new QLabel(centralwidget);
         P2_Texte_Evev->setObjectName(QStringLiteral("P2_Texte_Evev"));
-        sizePolicy2.setHeightForWidth(P2_Texte_Evev->sizePolicy().hasHeightForWidth());
-        P2_Texte_Evev->setSizePolicy(sizePolicy2);
+        QSizePolicy sizePolicy5(QSizePolicy::Ignored, QSizePolicy::Fixed);
+        sizePolicy5.setHorizontalStretch(0);
+        sizePolicy5.setVerticalStretch(0);
+        sizePolicy5.setHeightForWidth(P2_Texte_Evev->sizePolicy().hasHeightForWidth());
+        P2_Texte_Evev->setSizePolicy(sizePolicy5);
         P2_Texte_Evev->setScaledContents(true);
         P2_Texte_Evev->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
@@ -213,6 +225,16 @@ public:
         verticalSpacer_27 = new QSpacerItem(0, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout_2->addItem(verticalSpacer_27);
+
+        P2_Image = new QLabel(centralwidget);
+        P2_Image->setObjectName(QStringLiteral("P2_Image"));
+        P2_Image->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_2->addWidget(P2_Image);
+
+        verticalSpacer_28 = new QSpacerItem(0, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        verticalLayout_2->addItem(verticalSpacer_28);
 
         P2_GroupBox = new QGroupBox(centralwidget);
         P2_GroupBox->setObjectName(QStringLiteral("P2_GroupBox"));
@@ -273,9 +295,6 @@ public:
 
         P3_Titre = new QLabel(centralwidget);
         P3_Titre->setObjectName(QStringLiteral("P3_Titre"));
-        QSizePolicy sizePolicy4(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy4.setHorizontalStretch(0);
-        sizePolicy4.setVerticalStretch(0);
         sizePolicy4.setHeightForWidth(P3_Titre->sizePolicy().hasHeightForWidth());
         P3_Titre->setSizePolicy(sizePolicy4);
         QFont font;
@@ -291,11 +310,11 @@ public:
 
         P3_Flore = new QLabel(centralwidget);
         P3_Flore->setObjectName(QStringLiteral("P3_Flore"));
-        QSizePolicy sizePolicy5(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        sizePolicy5.setHorizontalStretch(0);
-        sizePolicy5.setVerticalStretch(0);
-        sizePolicy5.setHeightForWidth(P3_Flore->sizePolicy().hasHeightForWidth());
-        P3_Flore->setSizePolicy(sizePolicy5);
+        QSizePolicy sizePolicy6(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy6.setHorizontalStretch(0);
+        sizePolicy6.setVerticalStretch(0);
+        sizePolicy6.setHeightForWidth(P3_Flore->sizePolicy().hasHeightForWidth());
+        P3_Flore->setSizePolicy(sizePolicy6);
 
         verticalLayout->addWidget(P3_Flore);
 
@@ -431,6 +450,15 @@ public:
 
         verticalLayout->addWidget(P3_Vache_pollution);
 
+        verticalSpacer_20 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        verticalLayout->addItem(verticalSpacer_20);
+
+        P3_Image_Vache = new QLabel(centralwidget);
+        P3_Image_Vache->setObjectName(QStringLiteral("P3_Image_Vache"));
+
+        verticalLayout->addWidget(P3_Image_Vache);
+
         verticalSpacer_15 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout->addItem(verticalSpacer_15);
@@ -462,6 +490,7 @@ public:
         P2_Terre->setText(QApplication::translate("fenetre2", "Terre", Q_NULLPTR));
         P2_Temps->setText(QApplication::translate("fenetre2", "<html><head/><body><p>Temps : NB</p></body></html>", Q_NULLPTR));
         P2_Texte_Evev->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
+        P2_Image->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
         P2_GroupBox->setTitle(QApplication::translate("fenetre2", "Faites le bon choix !", Q_NULLPTR));
         P2_button_choix1->setText(QApplication::translate("fenetre2", "RadioButton", Q_NULLPTR));
         P2_button_choix2->setText(QApplication::translate("fenetre2", "RadioButton", Q_NULLPTR));
@@ -481,6 +510,7 @@ public:
         P3_Humain_nv_tech->setText(QApplication::translate("fenetre2", "Nv techologique : X %", Q_NULLPTR));
         P3_Vache->setText(QApplication::translate("fenetre2", "Vaches : NB", Q_NULLPTR));
         P3_Vache_pollution->setText(QApplication::translate("fenetre2", "Methane :", Q_NULLPTR));
+        P3_Image_Vache->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
     } // retranslateUi
 
 };
