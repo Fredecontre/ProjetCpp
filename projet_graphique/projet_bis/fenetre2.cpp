@@ -30,7 +30,7 @@ fenetre2::fenetre2(QWidget *parent,int nbHumain, int nbVache, int nbConifere,int
     ui(new Ui::fenetre2)
 {
     ui->setupUi(this);
-    setFixedSize(700,500);
+    setFixedSize(1200,600);
 
     //Initialiser les membres de la classe fenetre2
     terre = new Terre();
@@ -78,8 +78,24 @@ fenetre2::fenetre2(QWidget *parent,int nbHumain, int nbVache, int nbConifere,int
     ui->P3_Image_Foret->setPixmap(Foret.scaled(180,180,Qt::KeepAspectRatio));
  */
 
+    /* Images de la fenêtre de jeu */
+    QPixmap vache_rit("vache_qui_rit");
+     QPixmap Foret("foret_potter");
+     QPixmap Dory("dory");
+
+     ui->P3_Image_Vache->setPixmap(vache_rit.scaled(180,180,Qt::KeepAspectRatio));
+     ui->P3_Image_Foret->setPixmap(Foret.scaled(180,180,Qt::KeepAspectRatio));
+     ui->P1_Image_Dory->setPixmap(Dory.scaled(150,150,Qt::KeepAspectRatio));
 
 
+
+    /* Attributs numériques du jeu à afficher*/
+     ui->P3_Flore->setText("Flore : "+QString::number(Flore::getNbFlore()));
+     ui->P3_Humain->setText("Humains : "+QString::number(Humain::getNbHumains()));
+     ui->P3_Vache->setText("Vaches : "+QString::number(Vache::getNbVaches()));
+     ui->P3_Faune->setText("Faune : "+QString::number(Faune::getNbFaune()));
+     ui->P3_Conifere->setText("Coniferes : "+QString::number(Conifere::getNbConiferes()));
+     ui->P3_Algue->setText("Algues : "+QString::number(Algue::getNbAlgues()));
       ui->P3_Vache_pollution->setText("Methane : "+QString::number(Vache::getMethane()));
       ui->P3_Conifere_O2->setText("O2 : "+QString::number(conifere->getO2()));
       ui->P3_Algue_O2->setText("O2 : "+QString::number(algue->getO2()));
@@ -91,7 +107,6 @@ fenetre2::fenetre2(QWidget *parent,int nbHumain, int nbVache, int nbConifere,int
       ui->P2_button_choix1->setText(text_button1[0]);
       ui->P2_button_choix2->setText(text_button2[0]);
       ui->P2_button_choix3->setText(text_button3[0]);
-     // ui->P2_Image->setPixmap(trump.scaled(500,500,Qt::KeepAspectRatio));
 
       //EcosystMarin->changerSante(terre);
       //EcosystTerrestre->changerSante(terre);
@@ -149,9 +164,9 @@ void fenetre2::on_bouton_action_clicked() // bouton passer temps
       ui->P3_Vache->setText("Vaches : "+QString::number(Vache::getNbVaches()));
       ui->P3_Faune->setText("Faune : "+QString::number(Faune::getNbFaune()));
       ui->P3_Conifere->setText("Coniferes : "+QString::number(Conifere::getNbConiferes()));
-      ui->P3_Algue->setText("Faune : "+QString::number(Algue::getNbAlgues()));
+      ui->P3_Algue->setText("Algues : "+QString::number(Algue::getNbAlgues()));
       ui->P2_Temps->setText("Temps : "+QString::number(terre->getTemps()));
-      ui->P3_Vache_pollution->setText("Methane : "+QString::number(Vache::getMethane()));
+      ui->P3_Vache_pollution->setText("Méthane : "+QString::number(Vache::getMethane()));
       ui->P3_Conifere_O2->setText("O2 : "+QString::number(conifere->getO2()));
       ui->P3_Algue_O2->setText("O2 : "+QString::number(algue->getO2()));
       ui->P3_Humain_nv_tech->setText("Niveau Technologique : "+QString::number(Humain::getNiveauTechnologique()));

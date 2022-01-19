@@ -20,15 +20,10 @@ class Terre{
     void gestionTemps(EcosystemeMarin* EcosystMarin, EcosystemeTerrestre* EcosysTerrestre);
     void ajoutEtreVivant(EtreVivant* etre){EtresVivants.push_back(etre);}
     void ajoutEcosysteme(Ecosysteme* eco){Ecosystemes.push_back(eco);}
-    //void gestionSante(int O2, int CO2);
     vector<EtreVivant*> getEtresVivants(){return EtresVivants;}
-    void eliminerEtreVivant(vector<EtreVivant*>::iterator indice){EtresVivants.erase(indice);}
-    void viellissementEtresVivants(){
-        for(auto iter = getEtresVivants().begin() ; iter != getEtresVivants().end(); iter++){
-            (*iter)->augmenterAge();
-        }
-
-    }
+    void viellissementEtresVivants();
+    void tuerNEtresVivants(size_t n, size_t type);
+    void ajouterNEtresVivants(size_t n, size_t type);
 
 
     private:

@@ -5,12 +5,13 @@
 
 #include <iostream>
 
+using namespace std;
 
 class Terre;
 class EcosystemeMarin;
 class EcosystemeTerrestre;
 
-using namespace std;
+
 
 
 class Ecosysteme
@@ -18,6 +19,7 @@ class Ecosysteme
 
 protected:
   int santeEcosysteme;
+
 public:
     Ecosysteme(Terre* t);
     virtual void changerSante(Terre* terre)=0;
@@ -30,13 +32,11 @@ public:
 
 class EcosystemeMarin: public Ecosysteme
 {
-protected:
-   // static size_t santeEcosystemeMarin;
+
+
 public:
     EcosystemeMarin(Terre* t);
     void changerSante(Terre* terre);
-    //static size_t getSanteEcosysteme(){return santeEcosystemeMarin;}
-    //static void setSanteEcosystemeMarin(size_t sante);
 
 
 
@@ -46,13 +46,10 @@ public:
 
 class EcosystemeTerrestre: public Ecosysteme
 {
-protected:
-   // static size_t santeEcosystemeTerre;
+
 public:
     EcosystemeTerrestre(Terre* t);
     void changerSante(Terre* terre);
-    //static size_t getSanteEcosysteme(){return santeEcosystemeTerre;}
-    //static void setSanteEcosystemeTerre(size_t sante);
 };
 
 

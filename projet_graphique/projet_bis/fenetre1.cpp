@@ -15,8 +15,8 @@ fenetre1::fenetre1(QWidget *parent) :
                                  "\n"
                                  "L'intelligence artificielle Hands on earth a besoin de vous ! Lancez la simulation à échelle réduite et faites les bon choix pour sauver la terre d'un destin tragique");
     QPixmap pix_image(QCoreApplication::applicationDirPath() +"/terre_apocalyspe2");
-    ui->Image_Presentation->setPixmap(pix_image.scaled(1000,750,Qt::KeepAspectRatio));
-    setFixedSize(700,500);
+    ui->Image_Presentation->setPixmap(pix_image.scaled(700,450,Qt::KeepAspectRatio));
+    setFixedSize(1200,600);
 
 }
 
