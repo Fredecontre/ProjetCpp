@@ -33,7 +33,11 @@ public:
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout_6;
     QLabel *Titre_page;
+    QSpacerItem *verticalSpacer_5;
+    QLabel *Image_Presentation;
+    QSpacerItem *verticalSpacer_6;
     QLabel *description_jeu;
+    QSpacerItem *verticalSpacer_4;
     QSpacerItem *horizontalSpacer;
     QVBoxLayout *verticalLayout_5;
     QGroupBox *groupBoxHumain;
@@ -71,6 +75,11 @@ public:
         verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
         Titre_page = new QLabel(centralwidget);
         Titre_page->setObjectName(QStringLiteral("Titre_page"));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(Titre_page->sizePolicy().hasHeightForWidth());
+        Titre_page->setSizePolicy(sizePolicy);
         QFont font;
         font.setPointSize(50);
         Titre_page->setFont(font);
@@ -78,11 +87,34 @@ public:
 
         verticalLayout_6->addWidget(Titre_page);
 
+        verticalSpacer_5 = new QSpacerItem(50, 20, QSizePolicy::Minimum, QSizePolicy::MinimumExpanding);
+
+        verticalLayout_6->addItem(verticalSpacer_5);
+
+        Image_Presentation = new QLabel(centralwidget);
+        Image_Presentation->setObjectName(QStringLiteral("Image_Presentation"));
+        QSizePolicy sizePolicy1(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(Image_Presentation->sizePolicy().hasHeightForWidth());
+        Image_Presentation->setSizePolicy(sizePolicy1);
+        Image_Presentation->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_6->addWidget(Image_Presentation);
+
+        verticalSpacer_6 = new QSpacerItem(50, 20, QSizePolicy::Minimum, QSizePolicy::MinimumExpanding);
+
+        verticalLayout_6->addItem(verticalSpacer_6);
+
         description_jeu = new QLabel(centralwidget);
         description_jeu->setObjectName(QStringLiteral("description_jeu"));
-        description_jeu->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        description_jeu->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
 
         verticalLayout_6->addWidget(description_jeu);
+
+        verticalSpacer_4 = new QSpacerItem(50, 20, QSizePolicy::Minimum, QSizePolicy::MinimumExpanding);
+
+        verticalLayout_6->addItem(verticalSpacer_4);
 
         horizontalSpacer = new QSpacerItem(40, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -201,29 +233,9 @@ public:
     {
         fenetre1->setWindowTitle(QApplication::translate("fenetre1", "MainWindow", Q_NULLPTR));
         Titre_page->setText(QApplication::translate("fenetre1", "Hands on Earth", Q_NULLPTR));
-        description_jeu->setText(QApplication::translate("fenetre1", "Description jeu : \n"
-"blablabla \n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa\n"
-" blablablaaaaaaaaaaaaa", Q_NULLPTR));
-        groupBoxHumain->setTitle(QApplication::translate("fenetre1", "Nombre Humains", Q_NULLPTR));
+        Image_Presentation->setText(QApplication::translate("fenetre1", "TextLabel", Q_NULLPTR));
+        description_jeu->setText(QApplication::translate("fenetre1", "Description jeu : ", Q_NULLPTR));
+        groupBoxHumain->setTitle(QApplication::translate("fenetre1", "Nombre  Humains", Q_NULLPTR));
         button_humain_choix1->setText(QApplication::translate("fenetre1", "100", Q_NULLPTR));
         button_humain_choix2->setText(QApplication::translate("fenetre1", "1000", Q_NULLPTR));
         button_humain_choix3->setText(QApplication::translate("fenetre1", "2000", Q_NULLPTR));

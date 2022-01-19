@@ -203,7 +203,7 @@ class Algue: public Flore
 {
 protected:
      static size_t nbAlgues;
-     static float O2Algue;
+     //static float O2Algue;
 
 
 public:
@@ -214,7 +214,7 @@ public:
 
    bool operator== (const Algue& a) const;
    friend std::ostream& operator<<(std::ostream& o,const Algue & a);
-   //static float getO2(){return O2Algue;}
+
    static void decrementerAlgues(){nbAlgues-=10000;}
 
 };

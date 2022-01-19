@@ -4,7 +4,6 @@
 #include <QMainWindow>
 #include <QDesktopWidget>
 #include "terre.h"
-#include "etrevivant.h"
 
 namespace Ui {
 class fenetre2;
@@ -20,8 +19,7 @@ public:
 
 private slots:
     void on_bouton_fenetre2_clicked();
-/*public slots:
-    void progressBarValue();*/
+
 
     void on_bouton_action_clicked();
 

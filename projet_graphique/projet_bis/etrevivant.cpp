@@ -49,6 +49,7 @@ Algue::Algue(Terre* terre):Flore(terre,3,0.0008){ Algue::nbAlgues++; setLongevit
 
 void Humain::impactEcologique(){
 
+
    impactEcolo =  - (niveauTechnologique*2 + consommationEau);
 }
 
