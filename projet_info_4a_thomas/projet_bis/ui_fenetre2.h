@@ -261,6 +261,7 @@ public:
         P2_Texte_Evev->setSizePolicy(sizePolicy5);
         P2_Texte_Evev->setScaledContents(true);
         P2_Texte_Evev->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        P2_Texte_Evev->setWordWrap(true);
 
         verticalLayout_2->addWidget(P2_Texte_Evev);
 
