@@ -35,8 +35,8 @@ public:
         bool operator== (const EtreVivant& e) const;
 
 
-        static size_t getNbEtresVivants(){return nbEtresVivants;}
-        int getImpactEcologique(){return impactEcolo;}
+        static size_t getNbEtresVivants() {return nbEtresVivants;}
+        int getImpactEcologique() const{return impactEcolo;}
         size_t getAge() const{ return age;}
         size_t getID() const{ return id;}
         size_t getLongevite() const{ return longevite;}
@@ -48,7 +48,7 @@ public:
         void augmenterAge(){age+=10;}
         void kill(){vivant=false;}  //Tuer cet être vivant en mettant son attribut vivant à false
         bool estVivant(){return vivant;}
-        static void decrementerNbEtresVivants(){nbEtresVivants--;}
+        static void decrementerNbEtresVivants(size_t n){nbEtresVivants-=n;}
 
 };
 
@@ -125,7 +125,7 @@ public:
    static size_t getNiveauTechnologique(){return niveauTechnologique;}
    friend std::ostream&  operator<<(std::ostream& o,const Humain & e);
    void setNiveauTechnologique(size_t niv){niveauTechnologique=niv;}
-   static void decrementerHumains(){nbHumains--;}
+   static void decrementerHumains(size_t n){nbHumains-=n;}
 
 
 
@@ -156,7 +156,7 @@ public:
    friend std::ostream& operator<<(std::ostream& o,const Vache & v);
    void setEmpreinteMethane(size_t emp){empreinteMethane=emp;}
    static size_t getMethane(){return empreinteMethane;}
-   static void decrementerVaches(){nbVaches--;}
+   static void decrementerVaches(size_t n){nbVaches-=n;}
 
 
 };
@@ -185,7 +185,7 @@ public:
     bool operator== (const Conifere& c) const;
     friend std::ostream& operator<<(std::ostream& o,const Conifere & c);
    // static float getO2(){return O2Conifere;}
-    static void decrementerConiferes(){nbConiferes-=1000;}
+    static void decrementerConiferes(size_t n){nbConiferes-=n;}
 
 
 
@@ -215,7 +215,7 @@ public:
    bool operator== (const Algue& a) const;
    friend std::ostream& operator<<(std::ostream& o,const Algue & a);
 
-   static void decrementerAlgues(){nbAlgues-=10000;}
+   static void decrementerAlgues(size_t n){nbAlgues-=n;}
 
 };
 

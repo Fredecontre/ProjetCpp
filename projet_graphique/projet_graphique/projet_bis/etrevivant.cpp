@@ -110,7 +110,7 @@ std::ostream& operator<<(std::ostream& o,const Conifere & c){
 
     o<< "Age: " + to_string(c.getAge())<<endl;
     o<< "Espérance de vie: " + to_string(c.getLongevite())<<endl;
-   // o<< "Impact écologique: " + to_string(c.getImpactEcologique())<<endl;
+    o<< "Impact écologique: " + to_string(c.getImpactEcologique())<<endl;
 
     return o;
 
@@ -127,7 +127,7 @@ std::ostream& operator<<(std::ostream& o,const Algue & c){
 
     o<< "Age: " + to_string(c.getAge())<<endl;
     o<< "Espérance de vie: " + to_string(c.getLongevite())<<endl;
-    //o<< "Impact écologique: " + to_string(c.getImpactEcologique())<<endl;
+    o<< "Impact écologique: " + to_string(c.getImpactEcologique())<<endl;
 
     return o;
 

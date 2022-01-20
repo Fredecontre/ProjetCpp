@@ -24,6 +24,7 @@ class Terre{
     void viellissementEtresVivants();
     void tuerNEtresVivants(size_t n, size_t type);
     void ajouterNEtresVivants(size_t n, size_t type);
+    void setSanteTerre(int n){santeTerre = n;}
 
 
 

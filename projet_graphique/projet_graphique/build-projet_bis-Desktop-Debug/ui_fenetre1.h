@@ -244,13 +244,13 @@ public:
         button_vache_choix2->setText(QApplication::translate("fenetre1", "100", Q_NULLPTR));
         button_vache_choix3->setText(QApplication::translate("fenetre1", "200", Q_NULLPTR));
         groupBox_Conifere->setTitle(QApplication::translate("fenetre1", "Nombre Conif\303\250res", Q_NULLPTR));
-        button_conifere_choix1->setText(QApplication::translate("fenetre1", "4000", Q_NULLPTR));
-        button_conifere_choix2->setText(QApplication::translate("fenetre1", "5000", Q_NULLPTR));
-        button_conifere_choix3->setText(QApplication::translate("fenetre1", "10000", Q_NULLPTR));
+        button_conifere_choix1->setText(QApplication::translate("fenetre1", "8000", Q_NULLPTR));
+        button_conifere_choix2->setText(QApplication::translate("fenetre1", "10000", Q_NULLPTR));
+        button_conifere_choix3->setText(QApplication::translate("fenetre1", "20000", Q_NULLPTR));
         groupBox_Algue->setTitle(QApplication::translate("fenetre1", "Nombre Algues", Q_NULLPTR));
-        button_algue_choix1->setText(QApplication::translate("fenetre1", "20000", Q_NULLPTR));
-        button_algue_choix2->setText(QApplication::translate("fenetre1", "40000", Q_NULLPTR));
-        button_algue_choix3->setText(QApplication::translate("fenetre1", "50000", Q_NULLPTR));
+        button_algue_choix1->setText(QApplication::translate("fenetre1", "40000", Q_NULLPTR));
+        button_algue_choix2->setText(QApplication::translate("fenetre1", "80000", Q_NULLPTR));
+        button_algue_choix3->setText(QApplication::translate("fenetre1", "100000", Q_NULLPTR));
         bouton_fenetre1->setText(QApplication::translate("fenetre1", "go", Q_NULLPTR));
     } // retranslateUi
 

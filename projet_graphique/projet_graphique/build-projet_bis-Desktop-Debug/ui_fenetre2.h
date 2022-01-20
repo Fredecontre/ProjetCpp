@@ -88,6 +88,7 @@ public:
     QSpacerItem *verticalSpacer_13;
     QLabel *P3_Humain;
     QSpacerItem *verticalSpacer_7;
+    QLabel *P3_Humain_pollution;
     QSpacerItem *verticalSpacer_18;
     QLabel *P3_Humain_nv_tech;
     QSpacerItem *verticalSpacer_9;
@@ -459,6 +460,16 @@ public:
 
         verticalLayout->addItem(verticalSpacer_7);
 
+        P3_Humain_pollution = new QLabel(centralwidget);
+        P3_Humain_pollution->setObjectName(QStringLiteral("P3_Humain_pollution"));
+        sizePolicy4.setHeightForWidth(P3_Humain_pollution->sizePolicy().hasHeightForWidth());
+        P3_Humain_pollution->setSizePolicy(sizePolicy4);
+        P3_Humain_pollution->setFont(font1);
+        P3_Humain_pollution->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        P3_Humain_pollution->setIndent(20);
+
+        verticalLayout->addWidget(P3_Humain_pollution);
+
         verticalSpacer_18 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout->addItem(verticalSpacer_18);
@@ -559,6 +570,7 @@ public:
         P3_Image_Foret->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
         P3_Faune->setText(QApplication::translate("fenetre2", "Faune : NB", Q_NULLPTR));
         P3_Humain->setText(QApplication::translate("fenetre2", "Humains : NB", Q_NULLPTR));
+        P3_Humain_pollution->setText(QApplication::translate("fenetre2", "Pollution : X %", Q_NULLPTR));
         P3_Humain_nv_tech->setText(QApplication::translate("fenetre2", "Nv techologique : X %", Q_NULLPTR));
         P3_Vache->setText(QApplication::translate("fenetre2", "Vaches : NB", Q_NULLPTR));
         P3_Vache_pollution->setText(QApplication::translate("fenetre2", "Methane :", Q_NULLPTR));

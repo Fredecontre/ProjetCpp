@@ -119,19 +119,6 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="P1_Eco_Marin_Image">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Ignored" vsizetype="MinimumExpanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QLabel" name="P1_Image_Dory">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Ignored" vsizetype="MinimumExpanding">
@@ -341,6 +328,9 @@
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
         </property>
        </widget>
       </item>

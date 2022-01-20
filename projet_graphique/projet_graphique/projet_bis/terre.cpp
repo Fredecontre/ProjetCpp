@@ -7,13 +7,9 @@ Terre::Terre():santeTerre(100), temps(0){
 
 //Fonction générale pour gérer l'ensemble des attributs du jeu lors de l'appui du bouton "passer temps"
 void Terre::gestionTemps(EcosystemeMarin* EcosystMarin, EcosystemeTerrestre* EcosysTerrestre){
-   santeTerre -=5;
+
 
     temps+=10;
-
-
-    tuerNEtresVivants(5,0);
-    //ajouterNEtresVivants(5,1);
 
     viellissementEtresVivants(); //Augmenter l'âge de 10 de chaque être vivant car le temps augmente de 10 ans
 
@@ -26,25 +22,25 @@ void Terre::gestionTemps(EcosystemeMarin* EcosystMarin, EcosystemeTerrestre* Eco
 
             if((*iter)->getType()== 0){ //Humain
 
-                dynamic_cast<Humain*>(*iter)->decrementerHumains();
+                dynamic_cast<Humain*>(*iter)->decrementerHumains(1);
                  (*iter)->kill();
              }
 
              else if((*iter)->getType()== 1){ //Vache
 
 
-               dynamic_cast<Vache*>(*iter)->decrementerVaches();
+               dynamic_cast<Vache*>(*iter)->decrementerVaches(1);
                (*iter)->kill();
              }
 
              else if((*iter)->getType()== 2){ //Conifere
-               dynamic_cast<Conifere*>(*iter)->decrementerConiferes();
+               dynamic_cast<Conifere*>(*iter)->decrementerConiferes(100);
                (*iter)->kill();
              }
 
              else if((*iter)->getType()== 3){ //Algue
 
-               dynamic_cast<Algue*>(*iter)->decrementerAlgues();
+               dynamic_cast<Algue*>(*iter)->decrementerAlgues(1000);
                (*iter)->kill();
              }
     }
@@ -79,22 +75,22 @@ void Terre::tuerNEtresVivants(size_t n, size_t type){
         if((*iter)->getType() == type){
             switch (type){
                 case 0:  //Humain
-                    dynamic_cast<Humain*>(*iter)->decrementerHumains();
+                    dynamic_cast<Humain*>(*iter)->decrementerHumains(n);
                    // (*iter)->kill();
                     break;
 
                 case 1:  //Vache
-                    dynamic_cast<Vache*>(*iter)->decrementerVaches();
+                    dynamic_cast<Vache*>(*iter)->decrementerVaches(n);
                    // (*iter)->kill();
                     break;
 
                 case 2:  //Conifere
-                    dynamic_cast<Conifere*>(*iter)->decrementerConiferes();
+                    dynamic_cast<Conifere*>(*iter)->decrementerConiferes(n);
                    // (*iter)->kill();
                     break;
 
                 case 3:  //Algue
-                    dynamic_cast<Algue*>(*iter)->decrementerAlgues();
+                    dynamic_cast<Algue*>(*iter)->decrementerAlgues(n);
                     //(*iter)->kill();
                     break;
             }
@@ -111,19 +107,19 @@ void Terre::ajouterNEtresVivants(size_t n, size_t type){
 
 
                 if(type== 0){  //Humain
-                    Humain hum(this);
+                    new Humain(this);
                   }
 
                 if(type== 1){  //Vache
-                    Vache vache(this);
+                    new Vache(this);
                   }
 
                 if(type== 2){  //Conifere
-                    Conifere conif(this);
+                    new Conifere(this);
                    }
 
                 if(type== 3){  //Algue
-                    Algue algue(this);
+                   new Algue(this);
                   }
 
         }
