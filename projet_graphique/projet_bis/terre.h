@@ -26,6 +26,7 @@ class Terre{
     void ajouterNEtresVivants(size_t n, size_t type);
 
 
+
     private:
 
 

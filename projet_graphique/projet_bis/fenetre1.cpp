@@ -41,12 +41,12 @@ void fenetre1::on_bouton_fenetre1_clicked()
            if(ui->button_vache_choix1->isChecked()) nbVache = 10;
            else if(ui->button_vache_choix2->isChecked()) nbVache = 100;
            else nbVache= 200;
-           if(ui->button_conifere_choix1->isChecked()) nbConifere = 8000;
-           else if(ui->button_conifere_choix1->isChecked()) nbConifere = 10000;
-           else nbConifere= 20000;
-           if(ui->button_algue_choix1->isChecked()) nbAlgue = 40000;
-           else if(ui->button_algue_choix2->isChecked()) nbAlgue = 80000;
-           else nbAlgue= 100000;
+           if(ui->button_conifere_choix1->isChecked()) nbConifere = 4000;
+           else if(ui->button_conifere_choix1->isChecked()) nbConifere = 5000;
+           else nbConifere= 10000;
+           if(ui->button_algue_choix1->isChecked()) nbAlgue = 20000;
+           else if(ui->button_algue_choix2->isChecked()) nbAlgue = 40000;
+           else nbAlgue= 50000;
 
            // nb humain, nb vache, nb algue, nb conifere
            page2 = new fenetre2(this,nbHumain,nbVache,nbConifere,nbAlgue);

@@ -18,7 +18,8 @@ QString text_principal[nb_tour] = {"Trump a encore perdu au golf ! Melania n'arr
                                    "Les centrales nucléaires en France se font vieilles.",
                                    "Le virus hautement mortel du glacier Pandore a infecté  la Russie. Que dois faire la France ?",
                                    "La fin du monde sur Terre semble inévitable. Elon musk est fin prêt à conoliser Mars et y établir une nouvelle humanité."};
-QString text_image[nb_tour] = {"trump","ingenieur","ingenieur","ingenieur","ingenieur","ingenieur"};
+//QString text_image[nb_tour] = {"trump","ingenieur","canicule","nucleaire_simpson","virus_masque_gaz","elon_musk"};
+//QString text_image[nb_tour] = {"elon_musk","trump","ingenieur","canicule","nucleaire_simpson","virus_masque_gaz"};
 int choix_button1[nb_tour] = {0,1000,1}; // santeTerre, nv technologique, santeEcosysteme, Sante Ecosysteme, nb humain,
 int choix_button2[nb_tour] = {0,-20000,-10}; // algues
 int choix_button3[nb_tour] = {0,-2000,-5}; // coniferes
@@ -57,7 +58,7 @@ fenetre2::fenetre2(QWidget *parent,int nbHumain, int nbVache, int nbConifere,int
         Conifere conifere(terre);
     }
 
-    for(int i = 0; i<nbAlgue-1; i++){
+    for(int i = 0; i< nbAlgue-1; i++){
         Algue algue(terre);
     }
 
@@ -111,7 +112,111 @@ fenetre2::fenetre2(QWidget *parent,int nbHumain, int nbVache, int nbConifere,int
       //EcosystMarin->changerSante(terre);
       //EcosystTerrestre->changerSante(terre);
       //terre->gestionTemps(EcosystMarin,EcosystTerrestre);
+      //initialiserSante();
 
+}
+void fenetre2::initialiserSante(){
+
+    int impHumain;
+    int impactVache;
+    int impactConifere;
+
+
+    //On traite ici que l'impact sur l'écologie de l'ecosystème terrestre des humains, vaches, et conifères
+    for(auto iter = terre->getEtresVivants().begin() ; iter != terre->getEtresVivants().end(); iter++){
+
+
+        if((*iter)->getType()==0){
+
+
+            (*iter)->impactEcologique();
+
+            impHumain=((*iter)->getImpactEcologique() )* Humain::getNbHumains();
+
+             break;
+             }
+
+           }
+
+
+    for(auto iter = terre->getEtresVivants().begin() ; iter != terre->getEtresVivants().end(); iter++){
+
+
+        if((*iter)->getType()==1){
+
+
+            (*iter)->impactEcologique();
+
+            impactVache=((*iter)->getImpactEcologique() )* Vache::getNbVaches();
+
+             break;
+             }
+
+           }
+
+    for(auto iter = terre->getEtresVivants().begin() ; iter != terre->getEtresVivants().end(); iter++){
+
+
+        if((*iter)->getType()==2 && (*iter)->estVivant()){
+
+
+            (*iter)->impactEcologique();
+
+            impactConifere=((*iter)->getImpactEcologique() )* Conifere::getNbConiferes();
+
+             break;
+             }
+
+           }
+
+
+
+    //On remet à l'échelle santeConifere
+    EcosystTerrestre->setSanteEcosysteme(impactVache/1000 + (int)impactConifere/1000 + (int)impHumain/400) ;
+
+
+
+
+
+
+    int impactHumain;
+    int impactAlgue;
+
+
+    /*On parcourt le vecteurs des êtres vivants de la classe terre afin de trouver l'impact écologique d'un humain
+     (qui est le même pour tous) et on sort de la bouble dès qu'on a rencontré un être vivant de type humain.  */
+
+    for(auto iter = terre->getEtresVivants().begin() ; iter != terre->getEtresVivants().end(); iter++){
+
+
+        if((*iter)->getType()==0){
+
+
+            (*iter)->impactEcologique();
+
+            impactHumain=((*iter)->getImpactEcologique() )* Humain::getNbHumains();
+
+             break;
+             }
+
+           }
+
+/*On parcourt le vecteurs des êtres vivants de la classe terre afin de trouver l'impact écologique d'une algue
+(qui est le même pour toutes) et on sort de la bouble dès qu'on a rencontré un être vivant de type algue.  */
+      for(auto iter = terre->getEtresVivants().begin() ; iter != terre->getEtresVivants().end(); iter++){
+
+              if((*iter)->getType()==3){
+
+                     (*iter)->impactEcologique();
+                     impactAlgue=((*iter)->getImpactEcologique() )* Algue::getNbAlgues();
+
+                     break;
+
+                 }
+      }
+
+
+     EcosystMarin->setSanteEcosysteme((int)impactAlgue/10000 + (int)impactHumain/400);
 }
 
 void fenetre2::on_bouton_fenetre2_clicked() // bouton retour menu

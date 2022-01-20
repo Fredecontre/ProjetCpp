@@ -3,9 +3,7 @@
 #include "etrevivant.h"
 #include <typeinfo>
 
-//size_t EcosystemeMarin::santeEcosystemeMarin = 0;
-//size_t EcosystemeTerrestre::santeEcosystemeTerre =0;
-//int EcosystemeTerrestre::santeEcosysteme(0);
+
 
 Ecosysteme::Ecosysteme(Terre* t)
 {
@@ -18,11 +16,6 @@ EcosystemeMarin::EcosystemeMarin(Terre* t):Ecosysteme(t){
 EcosystemeTerrestre::EcosystemeTerrestre(Terre* t):Ecosysteme(t){
                                                                  t->ajoutEcosysteme(this);}
 
-//impactEcolo max = 20 (terre), à diviser par X pour être sur l'échelle
-
-//10000 humains max/2000  (à mettre coeff 0.5 pour impact)
-
-//1000 vaches max/200 (à mettre coeff 0.5 pour impact
 
 void EcosystemeTerrestre::changerSante(Terre* terre){
 
@@ -82,7 +75,7 @@ void EcosystemeTerrestre::changerSante(Terre* terre){
 
 
     //On remet à l'échelle santeConifere
-    setSanteEcosysteme(impactVache/1000 + (int)impactConifere/1000 + (int)impactHumain/400) ;
+    setSanteEcosysteme(impactVache/900 + impactConifere/500 + impactHumain/10000) ;
 }
 
 void EcosystemeMarin::changerSante(Terre* terre){
@@ -124,11 +117,7 @@ void EcosystemeMarin::changerSante(Terre* terre){
       }
 
 
-     setSanteEcosysteme((int)impactAlgue/10000 + (int)impactHumain/400);
+     setSanteEcosysteme(impactAlgue/10000 + impactHumain/5000);
 
 }
-
-//void EcosystemeTerrestre::setSanteEcosystemeTerre(size_t sante){santeEcosystemeTerre=sante;}
-
-//void EcosystemeMarin::setSanteEcosystemeMarin(size_t sante){santeEcosystemeMarin=sante;}
 

@@ -201,21 +201,21 @@
          <item>
           <widget class="QRadioButton" name="button_conifere_choix1">
            <property name="text">
-            <string>8000</string>
+            <string>4000</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QRadioButton" name="button_conifere_choix2">
            <property name="text">
-            <string>10000</string>
+            <string>5000</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QRadioButton" name="button_conifere_choix3">
            <property name="text">
-            <string>20000</string>
+            <string>10000</string>
            </property>
           </widget>
          </item>
@@ -231,21 +231,21 @@
          <item>
           <widget class="QRadioButton" name="button_algue_choix1">
            <property name="text">
-            <string>40000</string>
+            <string>20000</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QRadioButton" name="button_algue_choix2">
            <property name="text">
-            <string>80000</string>
+            <string>40000</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QRadioButton" name="button_algue_choix3">
            <property name="text">
-            <string>100000</string>
+            <string>50000</string>
            </property>
           </widget>
          </item>
