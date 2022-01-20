@@ -76,22 +76,22 @@ void Terre::tuerNEtresVivants(size_t n, size_t type){
             switch (type){
                 case 0:  //Humain
                     dynamic_cast<Humain*>(*iter)->decrementerHumains(n);
-                   // (*iter)->kill();
+
                     break;
 
                 case 1:  //Vache
                     dynamic_cast<Vache*>(*iter)->decrementerVaches(n);
-                   // (*iter)->kill();
+
                     break;
 
                 case 2:  //Conifere
                     dynamic_cast<Conifere*>(*iter)->decrementerConiferes(n);
-                   // (*iter)->kill();
+
                     break;
 
                 case 3:  //Algue
                     dynamic_cast<Algue*>(*iter)->decrementerAlgues(n);
-                    //(*iter)->kill();
+
                     break;
             }
            j++;
@@ -99,32 +99,4 @@ void Terre::tuerNEtresVivants(size_t n, size_t type){
     }
 
 }
-
-void Terre::ajouterNEtresVivants(size_t n, size_t type){
-    /* Cette fonction tue n êtres vivants du type "type" spécifié*/
-
-    for(size_t i = 0 ; i < n ; i++){
-
-
-                if(type== 0){  //Humain
-                    new Humain(this);
-                  }
-
-                if(type== 1){  //Vache
-                    new Vache(this);
-                  }
-
-                if(type== 2){  //Conifere
-                    new Conifere(this);
-                   }
-
-                if(type== 3){  //Algue
-                   new Algue(this);
-                  }
-
-        }
-
-
-}
-
 

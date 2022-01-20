@@ -190,7 +190,6 @@ void fenetre2::on_bouton_action_clicked() // bouton passer temps
             if(ui->P2_button_choix2->isChecked()) choix = choix_button2[terre->getTemps()/10-1];
             if(ui->P2_button_choix3->isChecked()) choix = choix_button3[terre->getTemps()/10-1];
 
-           // EcosystTerrestre->setSanteEcosysteme(EcosystTerrestre->getSanteEcosysteme() + choix);
 
             terre->tuerNEtresVivants(choix,0);
 

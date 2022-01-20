@@ -60,7 +60,7 @@ class Faune: public EtreVivant
 {
 protected:
     size_t pollution;
-    int consommationEau;  //Entre 1 et 10
+    int consommationEau;
     static size_t nbFaune;
 
 public:
@@ -150,8 +150,6 @@ public:
   void impactEcologique();
 
    static size_t getNbVaches(){return nbVaches;}
-   //size_t getMethane() const {return empreinteMethane;}
-
    bool operator== (const Vache& v) const;
    friend std::ostream& operator<<(std::ostream& o,const Vache & v);
    void setEmpreinteMethane(size_t emp){empreinteMethane=emp;}
@@ -172,7 +170,6 @@ class Conifere: public Flore
 {
 protected:
      static size_t nbConiferes;
-    // static float O2Conifere;
 
 
 public:
@@ -184,12 +181,7 @@ public:
 
     bool operator== (const Conifere& c) const;
     friend std::ostream& operator<<(std::ostream& o,const Conifere & c);
-   // static float getO2(){return O2Conifere;}
     static void decrementerConiferes(size_t n){nbConiferes-=n;}
-
-
-
-
 };
 
 
@@ -203,8 +195,6 @@ class Algue: public Flore
 {
 protected:
      static size_t nbAlgues;
-     //static float O2Algue;
-
 
 public:
      Algue(Terre* terre);
@@ -214,7 +204,6 @@ public:
 
    bool operator== (const Algue& a) const;
    friend std::ostream& operator<<(std::ostream& o,const Algue & a);
-
    static void decrementerAlgues(size_t n){nbAlgues-=n;}
 
 };

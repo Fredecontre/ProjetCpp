@@ -1,9 +1,8 @@
 #include <QApplication>
 #include "fenetre1.h"
 #include "fenetre2.h"
-#include "terre.h"
-#include "ecosysteme.h"
-#include "etrevivant.h"
+
+
 
 
 int main(int argc, char *argv[])

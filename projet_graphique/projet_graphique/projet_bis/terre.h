@@ -3,6 +3,7 @@
 
 #pragma once
 using namespace std;
+
 #include <vector>
 #include "ecosysteme.h"
 #include "etrevivant.h"
@@ -23,7 +24,6 @@ class Terre{
     vector<EtreVivant*> getEtresVivants(){return EtresVivants;}
     void viellissementEtresVivants();
     void tuerNEtresVivants(size_t n, size_t type);
-    void ajouterNEtresVivants(size_t n, size_t type);
     void setSanteTerre(int n){santeTerre = n;}
 
 
@@ -34,7 +34,6 @@ class Terre{
     int santeTerre;
     vector<Ecosysteme*> Ecosystemes;
     vector<EtreVivant*> EtresVivants;
-
     size_t temps;
 
 };
