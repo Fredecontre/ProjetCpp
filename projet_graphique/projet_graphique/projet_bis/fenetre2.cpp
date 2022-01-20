@@ -34,9 +34,9 @@ QString texte_fin[3] = {"Vous avez embarqué pour une nouvelle vie ! Malgré vot
 QString texte_fin_nucleaire = "Une explosion nucléaire sans précédent déclenche une explosion en chaîne de tous les réacteurs sur le territoire français.\n"
                               "La France a disparu des radars et la vague de propagation atteint rapidement les autres continents.\n"
                               "Il ne suffira que de quelques jours pour que la Terre ne soit plus habitable.\n"
-                              "Seul quelques êtres sous-terres ont survécu.\nLa Terre est enfin débarassé de vous ! \nDOMMAGE !";
+                              "Seul quelques êtres sous-terres ont survécu.\nLa Terre est enfin débarassée de vous ! \nDOMMAGE !";
 QString texte_fin_virus = "Le virus Pandore a transformé tous les Russes en zombie et les Américains s'en font un plaisir !\n"
-                          "Vous êtes un fan de Call of Duty, alors prenez votre meilleur pompe et tentez de survivre aux vagues ennemis !";
+                          "Vous êtes un fan de Call of Duty, alors prenez votre meilleur pompe et tentez de survivre aux vagues ennemies !";
 int choix_button1[nb_tour] = {1000,0,0,1,-1,0}; // santeTerre + réduire arbres et plantes fixes, nv technologique, santeTerre, Sante Terre, nb humain en - en % ou pas, nombre par défaut pour scénario de fin
 int choix_button2[nb_tour] = {100,1,500,-1,10,1};
 int choix_button3[nb_tour] = {500,2,2000,0,5,2};
@@ -78,33 +78,21 @@ fenetre2::fenetre2(QWidget *parent,int nbHumain, int nbVache, int nbConifere,int
         Algue algue(terre);
     }
 
-    //QPixmap nemo1("nemo");
-   /* QPixmap terreNucleaire("terre_nucleaire");
-    QPixmap wally1(QCoreApplication::applicationDirPath() +"/wally");
-    QPixmap nemo1("nemo");
-    QPixmap trump("trump");
-    QPixmap Vache("vache_qui_rit");
-    QPixmap Dory("dory");
-    QPixmap Foret("foret_potter");
-
-    ui->P1_Eco_Terre_Image->setPixmap(wally1.scaled(150,150,Qt::KeepAspectRatio));
-    ui->P1_Eco_Marin_Image->setPixmap(nemo1.scaled(150,150,Qt::KeepAspectRatio));
-
-    ui->P3_Image_Vache->setPixmap(Vache.scaled(180,180,Qt::KeepAspectRatio));
-    ui->P1_Image_Dory->setPixmap(Dory.scaled(150,150,Qt::KeepAspectRatio));
-    ui->P3_Image_Foret->setPixmap(Foret.scaled(180,180,Qt::KeepAspectRatio));
- */
 
     /* Images de la fenêtre de jeu */
-    //QPixmap wally1("wally");
+    QPixmap wally1("wally");
     QPixmap vache_rit("vache_qui_rit");
-     QPixmap Foret("foret_potter");
-     QPixmap Dory("dory");
+    QPixmap Foret("foret_potter");
+    QPixmap Dory("dory");
+    QPixmap image_histoire("planete_sans_humain");
 
-     ui->P3_Image_Vache->setPixmap(vache_rit.scaled(180,180,Qt::KeepAspectRatio));
-     ui->P3_Image_Foret->setPixmap(Foret.scaled(180,180,Qt::KeepAspectRatio));
-     ui->P1_Image_Dory->setPixmap(Dory.scaled(150,150,Qt::KeepAspectRatio));
-    // ui->P1_Eco_Terre_Image->setPixmap(wally1.scaled(150,150,Qt::KeepAspectRatio));
+
+
+    ui->P3_Image_Vache->setPixmap(vache_rit.scaled(180,180,Qt::KeepAspectRatio));
+    ui->P3_Image_Foret->setPixmap(Foret.scaled(180,180,Qt::KeepAspectRatio));
+    ui->P1_Image_Dory->setPixmap(Dory.scaled(150,150,Qt::KeepAspectRatio));
+    ui->P1_Eco_Terre_Image->setPixmap(wally1.scaled(150,150,Qt::KeepAspectRatio));
+    ui->P2_Image->setPixmap(image_histoire.scaled(500,500,Qt::KeepAspectRatio));
 
 
 
@@ -127,17 +115,12 @@ fenetre2::fenetre2(QWidget *parent,int nbHumain, int nbVache, int nbConifere,int
       ui->P2_button_choix2->setText(text_button2[0]);
       ui->P2_button_choix3->setText(text_button3[0]);
 
-      //EcosystMarin->changerSante(terre);
-      //EcosystTerrestre->changerSante(terre);
-      //terre->gestionTemps(EcosystMarin,EcosystTerrestre);
-      //initialiserSante();
-
 }
 
 void fenetre2::on_bouton_fenetre2_clicked() // bouton retour menu
 {
     parentWidget()->show();
-    //close() automatique
+
 }
 
 fenetre2::~fenetre2()
@@ -157,12 +140,10 @@ void fenetre2::on_bouton_action_clicked() // bouton passer temps
     else{
         QMessageBox::warning(this, "Houston, we have a problem", "Attention, veuillez sélectionner au moins une option !");
     }
-    //QPixmap image_histoire(text_image[terre->getTemps()/10]);
-    //ui->P2_Image->setPixmap(image_histoire.scaled(500,500,Qt::KeepAspectRatio));
 
     if(terre->getTemps()/10 < nb_tour){ // notre scénario s'arrête à 6, fin différente
         // #### partie groupBox pour le choix des actions ####
-        // affichage actualisé
+
         ui->P2_button_choix1->setText(text_button1[terre->getTemps()/10]);
         ui->P2_button_choix2->setText(text_button2[terre->getTemps()/10]);
         ui->P2_button_choix3->setText(text_button3[terre->getTemps()/10]);
@@ -173,12 +154,6 @@ void fenetre2::on_bouton_action_clicked() // bouton passer temps
             if(ui->P2_button_choix1->isChecked()) choix = choix_button1[terre->getTemps()/10-1];
             if(ui->P2_button_choix2->isChecked()) choix = choix_button2[terre->getTemps()/10-1];
             if(ui->P2_button_choix3->isChecked()) choix = choix_button3[terre->getTemps()/10-1];
-
-
-
-            //EcosystTerrestre->setSanteEcosysteme( EcosystTerrestre->getSanteEcosysteme()+ choix);
-
-
             terre->tuerNEtresVivants(choix,2);
 
             }
@@ -187,20 +162,13 @@ void fenetre2::on_bouton_action_clicked() // bouton passer temps
             if(ui->P2_button_choix1->isChecked()) choix = choix_button1[terre->getTemps()/10-1];
             if(ui->P2_button_choix2->isChecked()) choix = choix_button2[terre->getTemps()/10-1];
             if(ui->P2_button_choix3->isChecked()) choix = choix_button3[terre->getTemps()/10-1];
-
-
             hum->setNiveauTechnologique( hum->getNiveauTechnologique() + choix);
-            //terre->ajouterNEtresVivants(choix,3);
-
-
-            }
+        }
 
         if(terre->getTemps()/10 == 3){
             if(ui->P2_button_choix1->isChecked()) choix = choix_button1[terre->getTemps()/10-1];
             if(ui->P2_button_choix2->isChecked()) choix = choix_button2[terre->getTemps()/10-1];
             if(ui->P2_button_choix3->isChecked()) choix = choix_button3[terre->getTemps()/10-1];
-
-           // EcosystTerrestre->setSanteEcosysteme(EcosystTerrestre->getSanteEcosysteme() + choix);
 
             terre->tuerNEtresVivants(choix,3);
 
@@ -214,7 +182,6 @@ void fenetre2::on_bouton_action_clicked() // bouton passer temps
 
             hum->setNiveauTechnologique( hum->getNiveauTechnologique() + choix);
 
-            //terre->tuerNEtresVivants(500,2);
 
         }
 
@@ -250,9 +217,6 @@ void fenetre2::on_bouton_action_clicked() // bouton passer temps
     }
 
     else{
-       // QPixmap Image_Fin(image_fin[choix]);
-       // ui->P2_Image->setPixmap(Image_Fin.scaled(500,500,Qt::KeepAspectRatio));
-
 
             if(ui->P2_button_choix1->isChecked()) choix = choix_button1[terre->getTemps()/10-1];
             if(ui->P2_button_choix2->isChecked()) choix = choix_button2[terre->getTemps()/10-1];
@@ -262,27 +226,6 @@ void fenetre2::on_bouton_action_clicked() // bouton passer temps
         ui->P2_GroupBox->hide();
         ui->bouton_action->setEnabled(false);
     }
-
-    /*// #### partie groupBox pour le choix des actions ####
-    // affichage actualisé
-    ui->P2_button_choix1->setText(text_button1[terre->getTemps()/10]);
-    ui->P2_button_choix2->setText(text_button2[terre->getTemps()/10]);
-    ui->P2_button_choix3->setText(text_button3[terre->getTemps()/10]);
-    ui->P2_Texte_Evev->setText(text_principal[terre->getTemps()/10]);
-
-    // on recupere le choix de l'utilisateur
-    if(ui->P2_button_choix1->isChecked()){
-        choix = choix_button1[terre->getTemps()/10];
-        // METTRE FONCTION POUR AGIR SUR HUMAIN
-    }
-    else if(ui->P2_button_choix2->isChecked()){
-        choix = choix_button2[terre->getTemps()/10];
-        // METTRE FONCTION POUR AGIR SUR ALGUES
-    }
-    else if(ui->P2_button_choix2->isChecked()){
-        choix = choix_button3[terre->getTemps()/10];
-        // METTRE FONCTION POUR AGIR SUR CONIFERES
-    }*/
 
     //Mise à jour affichage
      ui->progressBar->setValue(terre->getSante());

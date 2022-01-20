@@ -253,7 +253,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Terre</string>
+         <string>Hands on Earth</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>

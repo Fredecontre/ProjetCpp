@@ -47,12 +47,10 @@ fenetre2::fenetre2(QWidget *parent,int nbHumain, int nbVache, int nbConifere,int
     ui->setupUi(this);
     //setFixedSize(1250,715);
     terre = new Terre();
-    //Etres.push_back(new Humain(terre));
-    //Etres.push_back(new Vache(terre));
+
     Humain* hum = new Humain(terre);
     Vache* vache = new Vache(terre);
-    //QPixmap pix("/home/polytech/build-projet_bis-Desktop-Debug/image_flore.jpg");
-    //QPixmap pix(QCoreApplication::applicationDirPath() + "/image_flore.jpg");
+
     QPixmap wally1(QCoreApplication::applicationDirPath() +"/wally");
     QPixmap nemo1("nemo");
     QPixmap trump("trump");
@@ -122,7 +120,7 @@ void fenetre2::on_bouton_action_clicked() // bouton passer temps
             choix = choix_button3[terre->getTemps()/10-1];
             // METTRE FONCTION POUR AGIR SUR CONIFERES
         }
-        std::cout<<choix<<std::endl;
+
         if(choix == -1 && terre->getTemps()/10 == 4){
             QPixmap Image_Fin_Monde("terre_nucleaire");
             ui->P2_Image->setPixmap(Image_Fin_Monde.scaled(500,500,Qt::KeepAspectRatio));

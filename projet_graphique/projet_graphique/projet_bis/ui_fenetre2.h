@@ -532,7 +532,7 @@ public:
         P1_Eco_Terre->setText(QApplication::translate("fenetre2", "Ecosyst\303\250me Terrestre", Q_NULLPTR));
         P1_Eco_Terre_Sante->setText(QApplication::translate("fenetre2", "Sante : X %", Q_NULLPTR));
         P1_Eco_Terre_Image->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
-        P2_Terre->setText(QApplication::translate("fenetre2", "Terre", Q_NULLPTR));
+        P2_Terre->setText(QApplication::translate("fenetre2", "Hands on Earth", Q_NULLPTR));
         P2_Temps->setText(QApplication::translate("fenetre2", "<html><head/><body><p>Ann\303\251e : NB</p></body></html>", Q_NULLPTR));
         P2_Texte_Evev->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
         P2_Image->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));

@@ -109,6 +109,7 @@ public:
         description_jeu = new QLabel(centralwidget);
         description_jeu->setObjectName(QStringLiteral("description_jeu"));
         description_jeu->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
+        description_jeu->setWordWrap(true);
 
         verticalLayout_6->addWidget(description_jeu);
 

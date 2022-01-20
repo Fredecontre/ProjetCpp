@@ -38,7 +38,6 @@ public:
     QLabel *P1_Eco_Marin;
     QSpacerItem *verticalSpacer_23;
     QLabel *P1_Eco_Marin_Sante;
-    QLabel *P1_Eco_Marin_Image;
     QLabel *P1_Image_Dory;
     QLabel *P1_Eco_Terre;
     QSpacerItem *verticalSpacer_24;
@@ -153,18 +152,11 @@ public:
 
         verticalLayout_4->addWidget(P1_Eco_Marin_Sante);
 
-        P1_Eco_Marin_Image = new QLabel(centralwidget);
-        P1_Eco_Marin_Image->setObjectName(QStringLiteral("P1_Eco_Marin_Image"));
+        P1_Image_Dory = new QLabel(centralwidget);
+        P1_Image_Dory->setObjectName(QStringLiteral("P1_Image_Dory"));
         QSizePolicy sizePolicy2(QSizePolicy::Ignored, QSizePolicy::MinimumExpanding);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(P1_Eco_Marin_Image->sizePolicy().hasHeightForWidth());
-        P1_Eco_Marin_Image->setSizePolicy(sizePolicy2);
-
-        verticalLayout_4->addWidget(P1_Eco_Marin_Image);
-
-        P1_Image_Dory = new QLabel(centralwidget);
-        P1_Image_Dory->setObjectName(QStringLiteral("P1_Image_Dory"));
         sizePolicy2.setHeightForWidth(P1_Image_Dory->sizePolicy().hasHeightForWidth());
         P1_Image_Dory->setSizePolicy(sizePolicy2);
 
@@ -260,6 +252,7 @@ public:
         P2_Texte_Evev->setSizePolicy(sizePolicy5);
         P2_Texte_Evev->setScaledContents(true);
         P2_Texte_Evev->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        P2_Texte_Evev->setWordWrap(true);
 
         verticalLayout_2->addWidget(P2_Texte_Evev);
 
@@ -535,12 +528,11 @@ public:
         fenetre2->setWindowTitle(QApplication::translate("fenetre2", "MainWindow", Q_NULLPTR));
         P1_Eco_Marin->setText(QApplication::translate("fenetre2", "Ecosysteme Marin", Q_NULLPTR));
         P1_Eco_Marin_Sante->setText(QApplication::translate("fenetre2", "Sante : X %", Q_NULLPTR));
-        P1_Eco_Marin_Image->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
         P1_Image_Dory->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
         P1_Eco_Terre->setText(QApplication::translate("fenetre2", "Ecosyst\303\250me Terrestre", Q_NULLPTR));
         P1_Eco_Terre_Sante->setText(QApplication::translate("fenetre2", "Sante : X %", Q_NULLPTR));
         P1_Eco_Terre_Image->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
-        P2_Terre->setText(QApplication::translate("fenetre2", "Terre", Q_NULLPTR));
+        P2_Terre->setText(QApplication::translate("fenetre2", "Hands on Earth", Q_NULLPTR));
         P2_Temps->setText(QApplication::translate("fenetre2", "<html><head/><body><p>Ann\303\251e : NB</p></body></html>", Q_NULLPTR));
         P2_Texte_Evev->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
         P2_Image->setText(QApplication::translate("fenetre2", "TextLabel", Q_NULLPTR));
