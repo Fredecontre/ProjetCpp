@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>48</x>
+      <y>192</y>
+      <w>288</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>/Ecosystème/
+--
+#int SantéEcosystème
+
+--
+/+ virtual void changerSante()/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>392</x>
+      <y>0</y>
+      <w>304</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Terre
+--
+-size_t SantéTerre
+-size_t temps
+-vector&lt;Ecosysteme*&gt; Ecosystemes
+-vector&lt;EtreVivant*&gt; EtresVivants
+
+--
++size_t GetSante()
++void calculSante(int santeTerrestre, int santeMarin)
++void gestionTemps()
++void vieillissementEtresVivants()
++void ajoutEtreVivant()
++void killNEtresVivants()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>176</y>
+      <w>168</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>/EtreVivant/
+--
+//# int impactEcologique (peut être positif ou négatif selon si c'est plante ou animal)
+#size_t age
+#static size_t nbEtresVivants
+#size_t id
+#cont size_t longevite
+#int impactEcologique
+#bool vivant
+#size_t type
+--
+/+virtual void impactEcologique()/
++void kill()
++void estVivant()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>184</x>
+      <y>584</y>
+      <w>256</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Humain
+--
+
+#static size_t niveauTechnologique
+#static nbHumain
+
+
+--
++void decrementerHumains(size_t n)
++void operator&lt;&lt;(std::ostream&amp; o,const Humain &amp; e)
++bool operator==(const Humain&amp; e)
+void impactEcologique()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>752</x>
+      <y>584</y>
+      <w>256</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Coniferes
+--
++static nbConiferes
+
+--
++void decrementerConiferes(size_t n)
++void operator&lt;&lt;(std::ostream&amp; o,const Conifere &amp; c)
++bool operator==(const Conifere&amp; c)
+void impactEcologique()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>424</y>
+      <w>168</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>/Flore/
+--
++static nbFlore
+#size_t O2
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>408</x>
+      <y>424</y>
+      <w>168</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>/Faune/
+--
++static nbFaune
+#size_t consommationEau
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1024</x>
+      <y>584</y>
+      <w>248</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Algue
+--
++static nbAlgues
+
+--
++void decrementerAlgues(size_t n)
++void operator&lt;&lt;(std::ostream&amp; o,const Algue &amp; a)
++bool operator==(const Algue&amp; a)
+void impactEcologique()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>472</x>
+      <y>584</y>
+      <w>248</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Vache
+--
++static nbVache
+-int empreinteMethane
+
+--
++void decrementerVaches(size_t n)
++void operator&lt;&lt;(std::ostream&amp; o,const Vache &amp; v)
++bool operator==(const Vache&amp; v)
+void impactEcologique()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>376</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>EcosystemeTerrestre
+--
+
+--
++void changerSante()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>696</x>
+      <y>352</y>
+      <w>280</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;330.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>352</y>
+      <w>232</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>270.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>184</x>
+      <y>376</y>
+      <w>176</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>EcosystemeMarin
+--
+
+--
++void changerSante(t)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>80</x>
+      <y>336</y>
+      <w>128</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>192</x>
+      <y>336</y>
+      <w>96</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>256</x>
+      <y>504</y>
+      <w>240</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>280.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>504</y>
+      <w>88</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>824</x>
+      <y>488</y>
+      <w>144</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>992</x>
+      <y>488</y>
+      <w>112</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>328</x>
+      <y>248</y>
+      <w>312</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..1
+teaches to &gt;</panel_attributes>
+    <additional_attributes>370.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>160</y>
+      <w>216</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..1
+teaches to &gt;</panel_attributes>
+    <additional_attributes>10.0;40.0;250.0;10.0</additional_attributes>
+  </element>
+</diagram>
