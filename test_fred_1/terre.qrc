@@ -1,8 +1,0 @@
-<RCC>
-  <qresource prefix="terre_im">
-    <file>terre.png</file>
-  </qresource>
-  <qresource prefix="terre_gif">
-    <file>200.gif</file>
-  </qresource>
-</RCC>
